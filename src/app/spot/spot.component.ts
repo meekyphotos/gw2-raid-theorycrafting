@@ -21,7 +21,7 @@ export class SpotComponent implements OnInit {
     this.name = this.specialization;
     this.specialization = this.specialization.toLowerCase()
     this.image = '/assets/img/' + this.specialization + '.png';
-    this.core = ClassPanelComponent.getCoreFromSpecialization(this.name).toLowerCase();
+    this.core = ClassPanelComponent.getCoreFromSpecialization(this.specialization).toLowerCase();
   }
 
 }

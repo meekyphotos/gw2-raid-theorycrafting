@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {DragData} from "../class.service";
+import {defs} from "../class.definitions";
 
 @Component({
   selector: 'app-class-panel',
@@ -8,22 +9,11 @@ import {DragData} from "../class.service";
 })
 export class ClassPanelComponent implements OnInit {
   @Output() ready: EventEmitter<boolean> = new EventEmitter<boolean>();
-  static allSpecializations = [
-    ['Guardian', 'Dragonhunter', 'Firebrand', 'Willbender'],
-    ['Revenant', 'Herald', 'Renegade', 'Vindicator'],
-    ['Warrior', 'Berserker', 'Spellbreaker', 'Bladesworn'],
-    ['Engineer', 'Scrapper', 'Holosmith', 'Mechanist'],
-    ['Ranger', 'Druid', 'Soulbeast', 'Untamed'],
-    ['Thief', 'Daredevil', 'Deadeye', 'Specter'],
-    ['Elementalist', 'Tempest', 'Weaver', 'Catalyst'],
-    ['Mesmer', 'Chronomancer', 'Mirage', 'Virtuoso'],
-    ['Necromancer', 'Reaper', 'Scourge', 'Harbinger'],
-  ];
-  _allSpecializations = ClassPanelComponent.allSpecializations.flatMap(it => it)
+
+  _allSpecializations = Object.values(defs).map(it => it.name)
   static getCoreFromSpecialization(spec: string): string {
-    return this.allSpecializations.filter(
-      it => it.indexOf(spec) >= 0
-    )[0][0]
+    // @ts-ignore
+    return defs[spec].core
   }
 
   constructor() { }

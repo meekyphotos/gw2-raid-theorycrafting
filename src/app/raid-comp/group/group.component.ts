@@ -83,16 +83,16 @@ export class GroupComponent implements OnInit {
   }
 
   computeBoons() {
-    return this.party.filter(it => it != null).flatMap(it => {
+    return [...new Set(this.party.filter(it => it != null).flatMap(it => {
       // @ts-ignore
-      return Object.keys(defs[it.toLowerCase()]).filter(prop => defs[it.toLowerCase()][prop])
-    }).join(' ')
+      return Object.keys(defs[it.toLowerCase()].boons);
+    }))].join(' ')
   }
 
   computeMisc() {
-    return this.party.filter(it => it != null).flatMap(it => {
+    return [...new Set(this.party.filter(it => it != null).flatMap(it => {
       // @ts-ignore
-      return Object.keys(defs[it.toLowerCase()]).filter(prop => defs[it.toLowerCase()][prop])
-    }).join(' ')
+      return Object.keys(defs[it.toLowerCase()].misc);
+    }))].join(' ')
   }
 }
