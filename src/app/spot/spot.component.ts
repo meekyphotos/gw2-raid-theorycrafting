@@ -20,7 +20,7 @@ export class SpotComponent implements OnInit {
   ngOnInit(): void {
     this.name = this.specialization;
     this.specialization = this.specialization.toLowerCase()
-    this.image = '/assets/img/' + this.specialization + '.png';
+    this.image = 'assets/img/' + this.specialization + '.png';
     this.core = ClassPanelComponent.getCoreFromSpecialization(this.specialization).toLowerCase();
   }
 
