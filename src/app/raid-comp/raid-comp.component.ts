@@ -8,6 +8,7 @@ import {DragData, ReceivedItemEvent} from "../class.service";
            })
 export class RaidCompComponent implements OnInit {
   @Input() group: Array<Array<string | null>> = [];
+  @Output() groupChange: EventEmitter<Array<Array<string | null>>> = new EventEmitter<Array<Array<string | null>>>();
   @Output() changesToSquad: EventEmitter<Array<any>> = new EventEmitter<Array<any>>();
 
   constructor() {
@@ -29,13 +30,25 @@ export class RaidCompComponent implements OnInit {
     if (ev.dataTransfer != null) {
       const data = ev.dataTransfer.getData('text');
       const spotAssignment: DragData = JSON.parse(data);
+      console.log('handling drop')
       if (spotAssignment.hasSource && spotAssignment.groupId != undefined && spotAssignment.positionId != undefined) {
-        this.group[spotAssignment.groupId][spotAssignment.positionId] = null;
+        this.groupChange.emit(
+          this.group.map((it, index) => {
+            if ( index == spotAssignment.groupId ) {
+              return it.map((cell, cellIndex) => {
+                if ( cellIndex == spotAssignment.positionId ) {
+                  return null;
+                } else {
+                  return cell;
+                }
+              })
+            } else {
+              return it
+            }
+          })
+        )
       }
     }
   }
 
-  emitUpdates() {
-
-  }
 }

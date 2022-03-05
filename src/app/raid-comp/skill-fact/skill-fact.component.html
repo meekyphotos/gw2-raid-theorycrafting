@@ -1,0 +1,17 @@
+<div class="show-info ">
+    <div class="si-inner">
+        <div class="si-header ">
+            <div class="si-header-stat"></div>
+            <h6>{{titleOf()}}
+            </h6>
+        </div>
+        <div>
+            <p>{{descriptionOf()}}</p>
+            <p><strong>Status</strong>:
+                <ng-container *ngIf="modifier == 'no'">Missing</ng-container>
+                <ng-container *ngIf="modifier == 'weak'">Partially available</ng-container>
+                <ng-container *ngIf="modifier == 'ok'">Available</ng-container>
+            </p>
+        </div>
+    </div>
+</div>

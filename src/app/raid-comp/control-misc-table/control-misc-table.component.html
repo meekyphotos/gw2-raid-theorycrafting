@@ -1,0 +1,160 @@
+<div class="summary-control">
+    <h6>Miscellaneous effects</h6>
+    <div class="indicator"
+         [class.indicator-off]="daze == 'no'"
+         [class.indicator-weak]="daze == 'weak'"
+         [class.indicator-strong]="daze == 'ok'"
+         [ngxTippy]="dazeSkillFact"
+    >
+        <img src="assets/controls/Daze.png" alt="daze">
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="float == 'no'"
+         [class.indicator-weak]="float == 'weak'"
+         [class.indicator-strong]="float == 'ok'"
+         [ngxTippy]="floatSkillFact"
+    >
+        <img src="assets/controls/Float.png" alt="float">
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="knockback == 'no'"
+         [class.indicator-weak]="knockback == 'weak'"
+         [class.indicator-strong]="knockback == 'ok'"
+         [ngxTippy]="knockbackSkillFact"
+    >
+        <img src="assets/controls/Knockback.png" alt="knockback">
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="knockdown == 'no'"
+         [class.indicator-weak]="knockdown == 'weak'"
+         [class.indicator-strong]="knockdown == 'ok'"
+         [ngxTippy]="knockdownSkillFact"
+    >
+        <img src="assets/controls/Knockdown.png" alt="knockdown">
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="stun == 'no'"
+         [class.indicator-weak]="stun == 'weak'"
+         [class.indicator-strong]="stun == 'ok'"
+         [ngxTippy]="stunSkillFact"
+    >
+        <img src="assets/controls/Stun.png" alt="stun">
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="launch == 'no'"
+         [class.indicator-weak]="launch == 'weak'"
+         [class.indicator-strong]="launch == 'ok'"
+         [ngxTippy]="launchSkillFact"
+    >
+        <img src="assets/controls/Launch.png" alt="launch">
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="pull == 'no'"
+         [class.indicator-weak]="pull == 'weak'"
+         [class.indicator-strong]="pull == 'ok'"
+         [ngxTippy]="pullSkillFact"
+    >
+        <img src="assets/controls/Pull.png" alt="pull">
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="sink == 'no'"
+         [class.indicator-weak]="sink == 'weak'"
+         [class.indicator-strong]="sink == 'ok'"
+         [ngxTippy]="sinkSkillFact"
+    >
+        <img src="assets/controls/Sink.png" alt="sink">
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="barrier == 'no'"
+         [class.indicator-weak]="barrier == 'weak'"
+         [class.indicator-strong]="barrier == 'ok'"
+         [ngxTippy]="barrierSkillFact"
+    >
+        <img src="assets/controls/Barrier.png" alt="barrier">
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="breaksStun == 'no'"
+         [class.indicator-weak]="breaksStun == 'weak'"
+         [class.indicator-strong]="breaksStun == 'ok'"
+         [ngxTippy]="breaks_stunSkillFact"
+    >
+        <img src="assets/controls/Breaks_stun.png" alt="breaks_stun">
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="healing == 'no'"
+         [class.indicator-weak]="healing == 'weak'"
+         [class.indicator-strong]="healing == 'ok'"
+         [ngxTippy]="healingSkillFact"
+    >
+        <img src="assets/controls/Healing.png" alt="healing">
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="cleanse == 'no'"
+         [class.indicator-weak]="cleanse == 'weak'"
+         [class.indicator-strong]="cleanse == 'ok'"
+         [ngxTippy]="cleanseSkillFact"
+    >
+        <img src="assets/controls/Miscellaneous_effect.png" alt="cleanse">
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="stealth == 'no'"
+         [class.indicator-weak]="stealth == 'weak'"
+         [class.indicator-strong]="stealth == 'ok'"
+         [ngxTippy]="stealthSkillFact"
+    >
+        <img src="assets/controls/Stealth.png" alt="stealth">
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="superspeed == 'no'"
+         [class.indicator-weak]="superspeed == 'weak'"
+         [class.indicator-strong]="superspeed == 'ok'"
+         [ngxTippy]="superspeedSkillFact"
+    >
+        <img src="assets/controls/Superspeed.png" alt="superspeed">
+    </div>
+</div>
+
+
+<ng-template #dazeSkillFact>
+    <app-skill-fact skill="daze" [modifier]="daze"></app-skill-fact>
+</ng-template>
+<ng-template #floatSkillFact>
+    <app-skill-fact skill="float" [modifier]="float"></app-skill-fact>
+</ng-template>
+<ng-template #knockbackSkillFact>
+    <app-skill-fact skill="knockback" [modifier]="knockback"></app-skill-fact>
+</ng-template>
+<ng-template #knockdownSkillFact>
+    <app-skill-fact skill="knockdown" [modifier]="knockdown"></app-skill-fact>
+</ng-template>
+<ng-template #stunSkillFact>
+    <app-skill-fact skill="stun" [modifier]="stun"></app-skill-fact>
+</ng-template>
+<ng-template #launchSkillFact>
+    <app-skill-fact skill="launch" [modifier]="launch"></app-skill-fact>
+</ng-template>
+<ng-template #pullSkillFact>
+    <app-skill-fact skill="pull" [modifier]="pull"></app-skill-fact>
+</ng-template>
+<ng-template #sinkSkillFact>
+    <app-skill-fact skill="sink" [modifier]="sink"></app-skill-fact>
+</ng-template>
+<ng-template #barrierSkillFact>
+    <app-skill-fact skill="barrier" [modifier]="barrier"></app-skill-fact>
+</ng-template>
+<ng-template #breaks_stunSkillFact>
+    <app-skill-fact skill="breaks_stun" [modifier]="breaksStun"></app-skill-fact>
+</ng-template>
+<ng-template #healingSkillFact>
+    <app-skill-fact skill="healing" [modifier]="healing"></app-skill-fact>
+</ng-template>
+<ng-template #cleanseSkillFact>
+    <app-skill-fact skill="cleanse" [modifier]="cleanse"></app-skill-fact>
+</ng-template>
+<ng-template #stealthSkillFact>
+    <app-skill-fact skill="stealth" [modifier]="stealth"></app-skill-fact>
+</ng-template>
+<ng-template #superspeedSkillFact>
+    <app-skill-fact skill="superspeed" [modifier]="superspeed"></app-skill-fact>
+</ng-template>
+

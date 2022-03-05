@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import "flexboxgrid.min.css";
+@import 'tippy.js/dist/tippy.css';
+
 body {
   background: #303030;
   color: #f5f5f5;
@@ -103,9 +105,11 @@ body {
   width: 100%;
   padding: 3px 0;
   font-size: 10px;
+
   a {
     text-decoration: none;
   }
+
   a, a:visited {
     cursor: help;
   }
@@ -116,6 +120,7 @@ body {
     padding: 1px 1px 1px 4px;
     border: 0;
   }
+
   .cat {
     margin: 1px 0;
   }
@@ -163,7 +168,9 @@ body {
     display: table;
     clear: both;
   }
+
   color: #929292;
+
   &.full {
     color: #43A047;
   }
@@ -177,146 +184,544 @@ body {
   }
 }
 
-.summary-boons .aegis { background-position: 0 -72px; }
-.summary-boons .alacrity { background-position: -24px -72px; }
-.summary-boons .fury { background-position: -48px -72px; }
-.summary-boons .might { background-position: -72px -72px; }
-.summary-boons .protection { background-position: -96px -72px; }
-.summary-boons .quickness { background-position: -120px -72px; }
-.summary-boons .regen { background-position: -144px -72px; }
-.summary-boons .resistance { background-position: -168px -72px; }
-.summary-boons .resolution { background-position: -192px -72px; }
-.summary-boons .stability { background-position: -216px -72px; }
-.summary-boons .swiftness { background-position: -240px -72px; }
-.summary-boons .vigor { background-position: -264px -72px; }
+.summary-boons .aegis {
+  background-position: 0 -72px;
+}
 
-.summary-boons.aegis .aegis { background-position: 0 -96px; }
-.summary-boons.alacrity .alacrity { background-position: -24px -96px; }
-.summary-boons.fury .fury { background-position: -48px -96px; }
-.summary-boons.might .might { background-position: -72px -96px; }
-.summary-boons.protection .protection { background-position: -96px -96px; }
-.summary-boons.quickness .quickness { background-position: -120px -96px; }
-.summary-boons.regen .regen { background-position: -144px -96px; }
-.summary-boons.resistance .resistance { background-position: -168px -96px; }
-.summary-boons.resolution .resolution { background-position: -192px -96px; }
-.summary-boons.stability .stability { background-position: -216px -96px; }
-.summary-boons.swiftness .swiftness { background-position: -240px -96px }
-.summary-boons.vigor .vigor { background-position: -264px -96px }
+.summary-boons .alacrity {
+  background-position: -24px -72px;
+}
 
-.summary-boons.aegis .aegis:hover { background-position: 0 -120px; cursor: pointer; }
-.summary-boons.alacrity .alacrity:hover { background-position: -24px -120px; cursor: pointer; }
-.summary-boons.fury .fury:hover { background-position: -48px -120px; cursor: pointer; }
-.summary-boons.might .might:hover { background-position: -72px -120px; cursor: pointer; }
-.summary-boons.protection .protection:hover { background-position: -96px -120px; cursor: pointer; }
-.summary-boons.quickness .quickness:hover { background-position: -120px -120px; cursor: pointer; }
-.summary-boons.regen .regen:hover { background-position: -144px -120px; cursor: pointer; }
-.summary-boons.resistance .resistance:hover { background-position: -168px -120px; cursor: pointer; }
-.summary-boons.resolution .resolution:hover { background-position: -192px -120px; cursor: pointer; }
-.summary-boons.stability .stability:hover { background-position: -216px -120px; cursor: pointer; }
-.summary-boons.swiftness .swiftness:hover { background-position: -240px -120px; cursor: pointer; }
-.summary-boons.vigor .vigor:hover { background-position: -264px -120px; cursor: pointer; }
+.summary-boons .fury {
+  background-position: -48px -72px;
+}
+
+.summary-boons .might {
+  background-position: -72px -72px;
+}
+
+.summary-boons .protection {
+  background-position: -96px -72px;
+}
+
+.summary-boons .quickness {
+  background-position: -120px -72px;
+}
+
+.summary-boons .regen {
+  background-position: -144px -72px;
+}
+
+.summary-boons .resistance {
+  background-position: -168px -72px;
+}
+
+.summary-boons .resolution {
+  background-position: -192px -72px;
+}
+
+.summary-boons .stability {
+  background-position: -216px -72px;
+}
+
+.summary-boons .swiftness {
+  background-position: -240px -72px;
+}
+
+.summary-boons .vigor {
+  background-position: -264px -72px;
+}
+
+.summary-boons.aegis .aegis {
+  background-position: 0 -96px;
+}
+
+.summary-boons.alacrity .alacrity {
+  background-position: -24px -96px;
+}
+
+.summary-boons.fury .fury {
+  background-position: -48px -96px;
+}
+
+.summary-boons.might .might {
+  background-position: -72px -96px;
+}
+
+.summary-boons.protection .protection {
+  background-position: -96px -96px;
+}
+
+.summary-boons.quickness .quickness {
+  background-position: -120px -96px;
+}
+
+.summary-boons.regen .regen {
+  background-position: -144px -96px;
+}
+
+.summary-boons.resistance .resistance {
+  background-position: -168px -96px;
+}
+
+.summary-boons.resolution .resolution {
+  background-position: -192px -96px;
+}
+
+.summary-boons.stability .stability {
+  background-position: -216px -96px;
+}
+
+.summary-boons.swiftness .swiftness {
+  background-position: -240px -96px
+}
+
+.summary-boons.vigor .vigor {
+  background-position: -264px -96px
+}
+
+.summary-boons.aegis .aegis:hover {
+  background-position: 0 -120px;
+  cursor: pointer;
+}
+
+.summary-boons.alacrity .alacrity:hover {
+  background-position: -24px -120px;
+  cursor: pointer;
+}
+
+.summary-boons.fury .fury:hover {
+  background-position: -48px -120px;
+  cursor: pointer;
+}
+
+.summary-boons.might .might:hover {
+  background-position: -72px -120px;
+  cursor: pointer;
+}
+
+.summary-boons.protection .protection:hover {
+  background-position: -96px -120px;
+  cursor: pointer;
+}
+
+.summary-boons.quickness .quickness:hover {
+  background-position: -120px -120px;
+  cursor: pointer;
+}
+
+.summary-boons.regen .regen:hover {
+  background-position: -144px -120px;
+  cursor: pointer;
+}
+
+.summary-boons.resistance .resistance:hover {
+  background-position: -168px -120px;
+  cursor: pointer;
+}
+
+.summary-boons.resolution .resolution:hover {
+  background-position: -192px -120px;
+  cursor: pointer;
+}
+
+.summary-boons.stability .stability:hover {
+  background-position: -216px -120px;
+  cursor: pointer;
+}
+
+.summary-boons.swiftness .swiftness:hover {
+  background-position: -240px -120px;
+  cursor: pointer;
+}
+
+.summary-boons.vigor .vigor:hover {
+  background-position: -264px -120px;
+  cursor: pointer;
+}
 
 /* Conditions */
-.summary-conditions .bleeding { background-position: 0 0; }
-.summary-conditions .blindness { background-position: -24px 0; }
-.summary-conditions .burning { background-position: -48px 0; }
-.summary-conditions .chilled { background-position: -72px 0; }
-.summary-conditions .confusion { background-position: -96px 0; }
-.summary-conditions .cripple { background-position: -120px 0; }
-.summary-conditions .fear { background-position: -144px 0; }
-.summary-conditions .immobilize { background-position: -168px 0; }
-.summary-conditions .poison { background-position: -192px 0; }
-.summary-conditions .slow { background-position: -216px 0; }
-.summary-conditions .torment { background-position: -240px 0; }
-.summary-conditions .vulnerability { background-position: -264px 0; }
-.summary-conditions .weakness { background-position: -288px 0; }
-.summary-conditions .taunt { background-position: -312px 0; }
+.summary-conditions .bleeding {
+  background-position: 0 0;
+}
 
-.summary-conditions.bleeding .bleeding { background-position: 0 -24px; }
-.summary-conditions.blindness .blindness { background-position: -24px -24px; }
-.summary-conditions.burning .burning { background-position: -48px -24px; }
-.summary-conditions.chilled .chilled { background-position: -72px -24px; }
-.summary-conditions.confusion .confusion { background-position: -96px -24px; }
-.summary-conditions.cripple .cripple { background-position: -120px -24px; }
-.summary-conditions.fear .fear { background-position: -144px -24px; }
-.summary-conditions.immobilize .immobilize { background-position: -168px -24px; }
-.summary-conditions.poison .poison { background-position: -192px -24px; }
-.summary-conditions.slow .slow { background-position: -216px -24px; }
-.summary-conditions.torment .torment { background-position: -240px -24px; }
-.summary-conditions.vulnerability .vulnerability { background-position: -264px -24px; }
-.summary-conditions.weakness .weakness { background-position: -288px -24px; }
-.summary-conditions.taunt .taunt { background-position: -312px -24px; }
+.summary-conditions .blindness {
+  background-position: -24px 0;
+}
 
-.summary-conditions.bleeding .bleeding:hover { background-position: 0 -48px; cursor: pointer; }
-.summary-conditions.blindness .blindness:hover { background-position: -24px -48px; cursor: pointer; }
-.summary-conditions.burning .burning:hover { background-position: -48px -48px; cursor: pointer; }
-.summary-conditions.chilled .chilled:hover { background-position: -72px -48px; cursor: pointer; }
-.summary-conditions.confusion .confusion:hover { background-position: -96px -48px; cursor: pointer; }
-.summary-conditions.cripple .cripple:hover { background-position: -120px -48px; cursor: pointer; }
-.summary-conditions.fear .fear:hover { background-position: -144px -48px; cursor: pointer; }
-.summary-conditions.immobilize .immobilize:hover { background-position: -168px -48px; cursor: pointer; }
-.summary-conditions.poison .poison:hover { background-position: -192px -48px; cursor: pointer; }
-.summary-conditions.slow .slow:hover { background-position: -216px -48px; cursor: pointer; }
-.summary-conditions.torment .torment:hover { background-position: -240px -48px; cursor: pointer; }
-.summary-conditions.vulnerability .vulnerability:hover { background-position: -264px -48px; cursor: pointer; }
-.summary-conditions.weakness .weakness:hover { background-position: -288px -48px; cursor: pointer; }
-.summary-conditions.taunt .taunt:hover { background-position: -312px -48px; cursor: pointer; }
+.summary-conditions .burning {
+  background-position: -48px 0;
+}
+
+.summary-conditions .chilled {
+  background-position: -72px 0;
+}
+
+.summary-conditions .confusion {
+  background-position: -96px 0;
+}
+
+.summary-conditions .cripple {
+  background-position: -120px 0;
+}
+
+.summary-conditions .fear {
+  background-position: -144px 0;
+}
+
+.summary-conditions .immobilize {
+  background-position: -168px 0;
+}
+
+.summary-conditions .poison {
+  background-position: -192px 0;
+}
+
+.summary-conditions .slow {
+  background-position: -216px 0;
+}
+
+.summary-conditions .torment {
+  background-position: -240px 0;
+}
+
+.summary-conditions .vulnerability {
+  background-position: -264px 0;
+}
+
+.summary-conditions .weakness {
+  background-position: -288px 0;
+}
+
+.summary-conditions .taunt {
+  background-position: -312px 0;
+}
+
+.summary-conditions.bleeding .bleeding {
+  background-position: 0 -24px;
+}
+
+.summary-conditions.blindness .blindness {
+  background-position: -24px -24px;
+}
+
+.summary-conditions.burning .burning {
+  background-position: -48px -24px;
+}
+
+.summary-conditions.chilled .chilled {
+  background-position: -72px -24px;
+}
+
+.summary-conditions.confusion .confusion {
+  background-position: -96px -24px;
+}
+
+.summary-conditions.cripple .cripple {
+  background-position: -120px -24px;
+}
+
+.summary-conditions.fear .fear {
+  background-position: -144px -24px;
+}
+
+.summary-conditions.immobilize .immobilize {
+  background-position: -168px -24px;
+}
+
+.summary-conditions.poison .poison {
+  background-position: -192px -24px;
+}
+
+.summary-conditions.slow .slow {
+  background-position: -216px -24px;
+}
+
+.summary-conditions.torment .torment {
+  background-position: -240px -24px;
+}
+
+.summary-conditions.vulnerability .vulnerability {
+  background-position: -264px -24px;
+}
+
+.summary-conditions.weakness .weakness {
+  background-position: -288px -24px;
+}
+
+.summary-conditions.taunt .taunt {
+  background-position: -312px -24px;
+}
+
+.summary-conditions.bleeding .bleeding:hover {
+  background-position: 0 -48px;
+  cursor: pointer;
+}
+
+.summary-conditions.blindness .blindness:hover {
+  background-position: -24px -48px;
+  cursor: pointer;
+}
+
+.summary-conditions.burning .burning:hover {
+  background-position: -48px -48px;
+  cursor: pointer;
+}
+
+.summary-conditions.chilled .chilled:hover {
+  background-position: -72px -48px;
+  cursor: pointer;
+}
+
+.summary-conditions.confusion .confusion:hover {
+  background-position: -96px -48px;
+  cursor: pointer;
+}
+
+.summary-conditions.cripple .cripple:hover {
+  background-position: -120px -48px;
+  cursor: pointer;
+}
+
+.summary-conditions.fear .fear:hover {
+  background-position: -144px -48px;
+  cursor: pointer;
+}
+
+.summary-conditions.immobilize .immobilize:hover {
+  background-position: -168px -48px;
+  cursor: pointer;
+}
+
+.summary-conditions.poison .poison:hover {
+  background-position: -192px -48px;
+  cursor: pointer;
+}
+
+.summary-conditions.slow .slow:hover {
+  background-position: -216px -48px;
+  cursor: pointer;
+}
+
+.summary-conditions.torment .torment:hover {
+  background-position: -240px -48px;
+  cursor: pointer;
+}
+
+.summary-conditions.vulnerability .vulnerability:hover {
+  background-position: -264px -48px;
+  cursor: pointer;
+}
+
+.summary-conditions.weakness .weakness:hover {
+  background-position: -288px -48px;
+  cursor: pointer;
+}
+
+.summary-conditions.taunt .taunt:hover {
+  background-position: -312px -48px;
+  cursor: pointer;
+}
 
 /* Control */
-.summary-control .daze { background-position: 0px -144px; }
-.summary-control .float { background-position: -24px -144px; }
-.summary-control .knockback { background-position: -48px -144px; }
-.summary-control .knockdown { background-position: -72px -144px; }
-.summary-control .launch { background-position: -96px -144px; }
-.summary-control .pull { background-position: -120px -144px; }
-.summary-control .sink { background-position: -144px -144px; }
-.summary-control .stun { background-position: -168px -144px; }
+.summary-control .daze {
+  background-position: 0px -144px;
+}
 
-.summary-control.daze .daze { background-position: 0px -168px; }
-.summary-control.float .float { background-position: -24px -168px; }
-.summary-control.knockback .knockback { background-position: -48px -168px; }
-.summary-control.knockdown .knockdown { background-position: -72px -168px; }
-.summary-control.launch .launch { background-position: -96px -168px; }
-.summary-control.pull .pull { background-position: -120px -168px; }
-.summary-control.sink .sink { background-position: -144px -168px; }
-.summary-control.stun .stun { background-position: -168px -168px; }
+.summary-control .float {
+  background-position: -24px -144px;
+}
 
-.summary-control.daze .daze:hover { background-position: 0px -192px; cursor: pointer; }
-.summary-control.float .float:hover { background-position: -24px -192px; cursor: pointer; }
-.summary-control.knockback .knockback:hover { background-position: -48px -192px; cursor: pointer; }
-.summary-control.knockdown .knockdown:hover { background-position: -72px -192px; cursor: pointer; }
-.summary-control.launch .launch:hover { background-position: -96px -192px; cursor: pointer; }
-.summary-control.pull .pull:hover { background-position: -120px -192px; cursor: pointer; }
-.summary-control.sink .sink:hover { background-position: -144px -192px; cursor: pointer; }
-.summary-control.stun .stun:hover { background-position: -168px -192px; cursor: pointer; }
+.summary-control .knockback {
+  background-position: -48px -144px;
+}
 
-.summary-control .barrier { background-position: -192px -144px; }
-.summary-control .breaks_stun { background-position: -216px -144px; }
-.summary-control .healing { background-position: -240px -144px; }
-.summary-control .stealth { background-position: -264px -144px; }
-.summary-control .superspeed { background-position: -288px -144px; }
-.summary-control .teleport { background-position: -312px -144px; }
-.summary-control .evade { background-position: -336px -144px; }
+.summary-control .knockdown {
+  background-position: -72px -144px;
+}
 
-.summary-control.barrier .barrier { background-position: -192px -168px; }
-.summary-control.breaks_stun .breaks_stun { background-position: -216px -168px; }
-.summary-control.healing .healing { background-position: -240px -168px; }
-.summary-control.stealth .stealth { background-position: -264px -168px; }
-.summary-control.superspeed .superspeed { background-position: -288px -168px; }
-.summary-control.teleport .teleport { background-position: -312px -168px; }
-.summary-control.evade .evade { background-position: -336px -168px; }
+.summary-control .launch {
+  background-position: -96px -144px;
+}
 
-.summary-control.barrier .barrier:hover { background-position: -192px -192px; cursor: pointer; }
-.summary-control.breaks_stun .breaks_stun:hover { background-position: -216px -192px; cursor: pointer; }
-.summary-control.healing .healing:hover { background-position: -240px -192px; cursor: pointer; }
-.summary-control.stealth .stealth:hover { background-position: -264px -192px; cursor: pointer; }
-.summary-control.superspeed .superspeed:hover { background-position: -288px -192px; cursor: pointer; }
-.summary-control.teleport .teleport:hover { background-position: -312px -192px; cursor: pointer; }
-.summary-control.evade .evade:hover { background-position: -336px -192px; cursor: pointer; }
+.summary-control .pull {
+  background-position: -120px -144px;
+}
+
+.summary-control .sink {
+  background-position: -144px -144px;
+}
+
+.summary-control .stun {
+  background-position: -168px -144px;
+}
+
+.summary-control.daze .daze {
+  background-position: 0px -168px;
+}
+
+.summary-control.float .float {
+  background-position: -24px -168px;
+}
+
+.summary-control.knockback .knockback {
+  background-position: -48px -168px;
+}
+
+.summary-control.knockdown .knockdown {
+  background-position: -72px -168px;
+}
+
+.summary-control.launch .launch {
+  background-position: -96px -168px;
+}
+
+.summary-control.pull .pull {
+  background-position: -120px -168px;
+}
+
+.summary-control.sink .sink {
+  background-position: -144px -168px;
+}
+
+.summary-control.stun .stun {
+  background-position: -168px -168px;
+}
+
+.summary-control.daze .daze:hover {
+  background-position: 0px -192px;
+  cursor: pointer;
+}
+
+.summary-control.float .float:hover {
+  background-position: -24px -192px;
+  cursor: pointer;
+}
+
+.summary-control.knockback .knockback:hover {
+  background-position: -48px -192px;
+  cursor: pointer;
+}
+
+.summary-control.knockdown .knockdown:hover {
+  background-position: -72px -192px;
+  cursor: pointer;
+}
+
+.summary-control.launch .launch:hover {
+  background-position: -96px -192px;
+  cursor: pointer;
+}
+
+.summary-control.pull .pull:hover {
+  background-position: -120px -192px;
+  cursor: pointer;
+}
+
+.summary-control.sink .sink:hover {
+  background-position: -144px -192px;
+  cursor: pointer;
+}
+
+.summary-control.stun .stun:hover {
+  background-position: -168px -192px;
+  cursor: pointer;
+}
+
+.summary-control .barrier {
+  background-position: -192px -144px;
+}
+
+.summary-control .breaks_stun {
+  background-position: -216px -144px;
+}
+
+.summary-control .healing {
+  background-position: -240px -144px;
+}
+
+.summary-control .stealth {
+  background-position: -264px -144px;
+}
+
+.summary-control .superspeed {
+  background-position: -288px -144px;
+}
+
+.summary-control .teleport {
+  background-position: -312px -144px;
+}
+
+.summary-control .evade {
+  background-position: -336px -144px;
+}
+
+.summary-control.barrier .barrier {
+  background-position: -192px -168px;
+}
+
+.summary-control.breaks_stun .breaks_stun {
+  background-position: -216px -168px;
+}
+
+.summary-control.healing .healing {
+  background-position: -240px -168px;
+}
+
+.summary-control.stealth .stealth {
+  background-position: -264px -168px;
+}
+
+.summary-control.superspeed .superspeed {
+  background-position: -288px -168px;
+}
+
+.summary-control.teleport .teleport {
+  background-position: -312px -168px;
+}
+
+.summary-control.evade .evade {
+  background-position: -336px -168px;
+}
+
+.summary-control.barrier .barrier:hover {
+  background-position: -192px -192px;
+  cursor: pointer;
+}
+
+.summary-control.breaks_stun .breaks_stun:hover {
+  background-position: -216px -192px;
+  cursor: pointer;
+}
+
+.summary-control.healing .healing:hover {
+  background-position: -240px -192px;
+  cursor: pointer;
+}
+
+.summary-control.stealth .stealth:hover {
+  background-position: -264px -192px;
+  cursor: pointer;
+}
+
+.summary-control.superspeed .superspeed:hover {
+  background-position: -288px -192px;
+  cursor: pointer;
+}
+
+.summary-control.teleport .teleport:hover {
+  background-position: -312px -192px;
+  cursor: pointer;
+}
+
+.summary-control.evade .evade:hover {
+  background-position: -336px -192px;
+  cursor: pointer;
+}
 
 .summary-boons, .summary-control {
   margin-left: 12px;
-  height: 88px;
+
   h6 {
     font-weight: normal;
     font-size: 8pt;
@@ -327,13 +732,10 @@ body {
 
   div {
     float: left;
-    background: url(/gw2-raid-theorycrafting/assets/summary-icons-24x24.v3.png) no-repeat 0 0;
-    width: 24px;
-    height: 24px;
-    margin: 0 2px 6px 0;
   }
 
 }
+
 $md-btn-color: #bf7523;
 $md-btn-primary-color: #00ACC1;
 
@@ -341,7 +743,7 @@ $md-btn-primary-color: #00ACC1;
   font-weight: 500;
   text-transform: uppercase;
   border: none;
-  margin-left:5px;
+  margin-left: 5px;
 
   font-size: 14px;
   display: inline-block;
@@ -359,12 +761,13 @@ $md-btn-primary-color: #00ACC1;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border:0;
+  border: 0;
   border-radius: 2px;
 
   background: $md-btn-primary-color;
-  color:#fff;
-  outline:0;
+  color: #fff;
+  outline: 0;
+
   &:focus {
     background: darken($md-btn-primary-color, 12%)
   }
@@ -381,15 +784,19 @@ $md-btn-primary-color: #00ACC1;
   }
 
 }
+
 .padded {
   margin-bottom: 15px;
 }
+
 .tcode {
   margin-top: 5px;
+
   .button {
     background: $md-btn-color;
-    color:#fff;
-    outline:0;
+    color: #fff;
+    outline: 0;
+
     &:focus {
       background: darken($md-btn-color, 12%)
     }
@@ -401,9 +808,10 @@ $md-btn-primary-color: #00ACC1;
     background-color: #ffffff;
     color: #a81d02;
     font-size: 8pt;
-    width:100%;
+    width: 100%;
     padding: 5px;
     resize: none;
+
     &:disabled {
       border-color: #ffffff;
       background-color: #a81d02;
@@ -413,6 +821,7 @@ $md-btn-primary-color: #00ACC1;
     }
   }
 }
+
 .flexbox {
   column-count: 2;
   column-gap: 0;
@@ -421,8 +830,566 @@ $md-btn-primary-color: #00ACC1;
   //flex-wrap: wrap;
   //
   padding: 0;
+
   li {
     display: inline-block;
     margin: 5px;
   }
+}
+
+.indicator {
+  position: relative;
+  margin-top: .5rem;
+  margin-right: 5px;
+  img {
+    width: 32px;
+    height: 32px;
+  }
+  &-off img {
+    filter: saturate(0);
+    opacity: 0.5;
+  }
+  &-weak img {
+    filter: saturate(1);
+    opacity: .7;
+  }
+  &-strong img {
+    filter: saturate(1);
+    opacity: 1;
+  }
+
+  .counter {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 0 3px #000000;
+  }
+}
+
+.tippy-box {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(0,0,0,0);
+}
+
+.show-info {
+  box-sizing: border-box;
+  min-width: 230px;
+  max-width: 350px;
+  height: auto;
+  border: solid 2px #000000;
+  z-index: 10;
+  background: url("assets/controls/show-info.jpg") 0 0;
+  opacity: 1;
+}
+
+.show-info.skill-desc {
+  max-width: 400px;
+}
+
+.show-info .si-inner {
+  display: block;
+  margin: -24px 12px 15px 12px;
+
+  //position: relative;
+  font-size: 12px !important;
+  font-weight: normal;
+  color: #f00;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, .8);
+}
+
+.show-info .si-inner * {
+  font-size: 12px;
+  font-weight: normal;
+  color: #ffffff;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, .8);
+}
+
+.show-info .si-header {
+  margin: 0 0 10px 0;
+}
+
+.show-info .si-header h6 {
+  color: #fee0ad;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.show-info .si-header.com h6 {
+  color: #ffffff;
+}
+
+.show-info .si-header.fin h6 {
+  color: #4f9dfe;
+}
+
+.show-info .si-header.mas h6 {
+  color: #2dc50e;
+}
+
+.show-info .si-header.rar h6 {
+  color: #ffe51f;
+}
+
+.show-info .si-header.exo h6 {
+  color: #fda500;
+}
+
+.show-info .si-header.asc h6 {
+  color: #ff4484;
+}
+
+.show-info .si-header.leg h6 {
+  color: #a02ef7;
+}
+
+.show-info .si-header .si-header-stat {
+  float: right;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.show-info .si-header .si-header-stat .attr-stat {
+  color: #00ff00;
+  font-size: 14px;
+}
+
+.show-info .si-header .si-header-stat .attr-stat.percent::after {
+  content: "%";
+  color: #00ff00;
+  font-size: 14px;
+}
+
+.show-info .si-header .si-header-stat .skill-stat {
+  margin: -5px -10px 0 0;
+}
+
+.show-info .si-header .si-header-stat .skill-stat li {
+  float: left;
+  font-size: 13px;
+  margin-left: 3px;
+  line-height: 22px;
+}
+
+.show-info .si-header .si-header-stat .skill-stat .original {
+  display: none;
+}
+
+.show-info .si-header .si-header-stat .skill-stat .modified {
+  color: #00ff00;
+}
+
+.show-info .si-header .si-header-stat .skill-stat .modified .original {
+  display: inline-block;
+  color: #ffffff;
+  margin-left: 5px;
+}
+
+.show-info .si-header .si-header-stat .skill-stat .modified .original::before {
+  content: "(";
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.show-info .si-header .si-header-stat .skill-stat .modified .original::after {
+  content: ")";
+  color: #ffffff;
+  font-size: 13px;
+}
+
+
+.show-info .skill-info, .show-info .skill-info * {
+  font-size: 12px;
+}
+
+.show-info .skill-info b {
+  color: #fce755;
+  font-weight: normal;
+}
+
+.show-info .skill-info em {
+  color: #d2d2d2;
+  font-style: italic;
+}
+
+.sfact.txt, .sfact.hr + .sfact {
+  margin-top: 20px;
+}
+
+.sfact.nohr, .show-info .sfact.nohr {
+  margin-top: 0 !important;
+}
+
+.show-info .sfact.txt, .show-info .sfact.hr + .sfact {
+  margin-top: 10px;
+}
+
+.show-info p + .sfact, .show-info p + .sfact.txt, .show-info p + .sfact.nohr {
+  margin-top: 10px !important;
+}
+
+.sfact.hr {
+  display: none;
+}
+
+.sfact.txt dt {
+  display: none;
+}
+
+.sfact.txt dd {
+  padding-left: 0;
+}
+
+.sfact.txt.enemy dd b {
+  color: #ff6600 !important;
+}
+
+.sfact.txt.ally dd b {
+  color: #0077ff !important;
+}
+
+.show-info .skill-info .sfact dd, .show-info .skill-info .sfact dd * {
+  color: #d2d2d2 !important;
+  font-size: 12px;
+}
+
+.show-info .skill-info .sfact.txt dd {
+  font-size: 12px;
+  color: #ffffff !important;
+}
+
+.show-info .skill-info .sfact.traited dd, .show-info .skill-info .sfact.traited dd * {
+  color: #77bbff !important;
+}
+
+.show-info .skill-info .sfact.isadded dd, .show-info .skill-info .sfact.isadded dd * {
+  font-style: italic !important;
+}
+
+.show-info .skill-info .sfact .multi {
+  font-size: 13px;
+  font-weight: 500;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, .9), -2px 2px 2px rgba(0, 0, 0, .9), 2px -2px 2px rgba(0, 0, 0, .9);
+}
+
+.show-info .skill-info .sfact .add {
+  font-weight: normal;
+}
+
+.show-info .skill-info .sfact .add::before, .show-info .skill-info .sfact .add::after {
+  content: none;
+}
+
+.show-info .skill-info .sfact.time .add::before {
+  content: " (";
+}
+
+.show-info .skill-info .sfact.x .add::before {
+  content: " (";
+}
+
+.show-info .skill-info .sfact.time .add::after {
+  content: ") ";
+}
+
+.show-info .skill-info .sfact.x .add::after {
+  content: "x) ";
+}
+
+.show-info .skill-info .sfact.desc .add::after {
+  content: ": ";
+}
+
+.show-info .skill-info .sfact.time.desc .add::after {
+  content: "): ";
+}
+
+.show-info .skill-info .sfact.x.desc .add::after {
+  content: "x): ";
+}
+
+.show-info.as-content {
+  max-width: 500px;
+}
+
+.show-info.as-content .si-header {
+  margin-bottom: 4px;
+}
+
+.show-info.as-content .si-header h6 {
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.show-info.as-content ul {
+  margin-bottom: 10px;
+}
+
+.show-info.as-content ul li {
+  list-style: none;
+  margin-bottom: 2px;
+}
+
+.show-info.as-content .attributes ul {
+}
+
+.show-info.as-content .attributes ul li {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.show-info.as-content .attributes ul li.traited {
+  color: #77bbff !important;
+}
+
+.show-info.as-content .attributes ul li::before {
+  display: inline-block;
+  content: "+";
+  float: left;
+  margin-right: 2px;
+}
+
+.show-info.as-content .attributes ul li.traited .buff-src {
+  font-style: italic;
+  color: #77bbff;
+}
+
+.show-info.as-content .attributes ul li.traited .buff-src::before {
+  content: "(";
+}
+
+.show-info.as-content .attributes ul li.traited .buff-src::after {
+  content: ")";
+}
+
+.show-info .si-tl-content ul {
+  margin: 0 10px 0 0;
+  max-width: 400px;
+}
+
+.show-info .si-tl-content ul li {
+  margin: 0 0 4px 30px;
+  list-style: none;
+  min-height: 28px;
+  line-height: 15px;
+}
+
+.show-info .si-tl-content ul li b {
+  color: #fce755;
+}
+
+.show-info .si-tl-content ul li em {
+  display: none;
+}
+
+.show-info .si-tl-content ul li .ico {
+  width: 24px;
+  height: 24px;
+  float: left;
+  margin-left: -30px;
+}
+
+.show-info .si-tl-content ul li .ico img {
+  width: 24px;
+  height: 24px;
+}
+
+.show-info .si-tl-content ul li .desc {
+}
+
+.show-info .si-text {
+}
+
+.show-info .si-table {
+}
+
+.show-info .si-aside {
+  margin-top: 10px;
+}
+
+.show-info .ad-stat {
+  margin: 0;
+}
+
+.show-info .ad-stat .value {
+  color: #00ff00;
+  margin: 0 15px 0 5px;
+}
+
+.show-info .si-aside.toggle-hint {
+  margin-top: 15px;
+  color: #999999;
+  font-size: 11px;
+  font-style: italic;
+}
+
+.show-info .si-aside.toggle-hint::before {
+  content: "(";
+}
+
+.show-info .si-aside.toggle-hint::after {
+  content: ")";
+}
+
+.show-info .si-aside.ctrl-hint {
+  margin-top: 15px;
+  color: #999999;
+  font-size: 11px;
+  font-style: italic;
+}
+
+.show-info .si-aside.ctrl-hint::before {
+  content: "(";
+}
+
+.show-info .si-aside.ctrl-hint::after {
+  content: ")";
+}
+
+.show-info .ad-stat + .at-stat {
+  margin-top: 10px;
+}
+
+.show-info .item-stat.rune {
+  margin-left: 22px;
+}
+
+.show-info .item-stat.rune::before {
+  display: block;
+  content: "(1):";
+  margin-left: -22px;
+  float: left;
+}
+
+.show-info .rune + .rune::before {
+  content: "(2):";
+}
+
+.show-info .rune + .rune + .rune::before {
+  content: "(3):";
+}
+
+.show-info .rune + .rune + .rune + .rune::before {
+  content: "(4):";
+}
+
+.show-info .rune + .rune + .rune + .rune + .rune::before {
+  content: "(5):";
+}
+
+.show-info .rune + .rune + .rune + .rune + .rune + .rune::before {
+  content: "(6):";
+}
+
+.show-info .blue {
+  color: #77bbff;
+}
+
+.show-info .item-desc em {
+  color: #b0b0b0;
+  font-style: normal;
+}
+
+.show-info .si-aside .ad-stat {
+  font-size: 12px;
+  color: #b0b0b0;
+}
+
+.show-info .si-aside .ad-stat .value {
+  color: #b0b0b0;
+  margin: 0;
+}
+
+.sfact.summary {
+}
+
+.sfact.summary dd {
+  color: #b0b0b0;
+}
+
+.sfact.summary b {
+  font-weight: normal;
+  color: #f4d3a8;
+}
+
+.sfact.summary em {
+  display: none;
+}
+
+.sfact.summary-skill em {
+  display: inline-block;
+  margin-right: 5px;
+  font-style: normal;
+  color: #f4f0d4;
+}
+
+.sfact.summary-skill em::before {
+  content: "[";
+}
+
+.sfact.summary-skill em::after {
+  content: "]";
+}
+
+
+/* Pet Info */
+.show-info.pet {
+}
+
+.show-info.pet .tribe {
+  float: right;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.show-info.pet .pet-info {
+  height: 220px;
+}
+
+.show-info.pet .pet-info p {
+  font-style: italic;
+  font-size: 13px;
+}
+
+.show-info.pet .pet-info ul {
+  width: 240px;
+  margin-top: 10px;
+}
+
+.show-info.pet .pet-info ul li {
+  width: 80px;
+  float: left;
+  background: none;
+  margin: 0 0 0 36px;
+  font-size: 13px;
+  line-height: 32px;
+}
+
+.show-info.pet .pet-info ul li::before {
+  width: 32px;
+  height: 30px;
+  content: '';
+  float: left;
+  display: block;
+  margin-left: -34px;
+}
+
+.show-info.pet .pet-info ul li.pc::after {
+  display: inline-block;
+  content: '%';
+}
+
+.show-info.pet .pet-info ul li.modified {
+  color: #00ff00;
+}
+
+.pet-tribes-matrix .tribe {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
 }

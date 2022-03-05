@@ -11,8 +11,8 @@ export class GroupComponent implements OnInit {
   @Input() title: string = '';
   @Input() groupId: number = 0;
   @Input() party: Array<string | null> = [];
+  @Output() partyChange: EventEmitter<Array<string | null>> = new EventEmitter<Array<string | null>>();
   @Output() receivedItem: EventEmitter<ReceivedItemEvent> = new EventEmitter<ReceivedItemEvent>();
-  @Output() updated: EventEmitter<Boolean> = new EventEmitter<Boolean>();
 
   constructor() {
   }
@@ -44,19 +44,42 @@ export class GroupComponent implements OnInit {
     if (ev.dataTransfer != null) {
       const data = ev.dataTransfer.getData('text');
       const spotAssignment: DragData = JSON.parse(data);
-      this.party[slotIndex] = spotAssignment.what;
-      this.updated.emit(true);
+      console.log('dropping to', slotIndex, spotAssignment)
       if (spotAssignment.hasSource) {
         if (spotAssignment.groupId === this.groupId) {
           if (spotAssignment.positionId !== slotIndex && spotAssignment.positionId != undefined) {
-            this.party[spotAssignment.positionId] = null;
+            this.partyChange.emit(
+              this.party.map((v, i) => {
+                if (i == slotIndex) {
+                  return spotAssignment.what;
+                }
+                if (i == spotAssignment.positionId) {
+                  return null;
+                }
+                return v;
+              })
+            )
           }
         } else {
-          this.receivedItem.emit({
-                                   source: spotAssignment.groupId,
-                                   position: spotAssignment.positionId
-                                 });
+          this.partyChange.emit(
+            this.party.map((v, i) => {
+              if (i == slotIndex) {
+                return spotAssignment.what;
+              }
+
+              return v;
+            })
+          )
         }
+      } else {
+        this.partyChange.emit(this.party.map((v, i) => {
+                                if (i == slotIndex) {
+                                  return spotAssignment.what
+                                } else {
+                                  return v
+                                }
+                              })
+        )
       }
     }
   }

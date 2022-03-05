@@ -1,5 +1,6 @@
 <div class="group">
     <div class="desc">{{title}}</div>
+    <app-group-stats [party]="party"></app-group-stats>
     <ul class="list-unstyled">
         <ng-container *ngFor="let partySlot of party; let i = index">
             <li class="slot" draggable="true" (dragstart)="drag(i, $event)" (drop)="drop(i, $event)" (dragover)="allowDrop($event)">
@@ -10,38 +11,7 @@
     <div class="count" [class.full]="isFull()">
         <h6>Count {{countParty()}} / 5</h6>
     </div>
-    <div class="summary-boons {{computeBoons()}}">
-        <h6>Boons</h6>
-        <div class="aegis"></div>
-        <div class="alacrity"></div>
-        <div class="fury"></div>
-        <div class="might"></div>
-        <div class="protection"></div>
-        <div class="quickness"></div>
-        <div class="regen"></div>
-        <div class="resistance"></div>
-        <div class="resolution"></div>
-        <div class="stability"></div>
-        <div class="swiftness"></div>
-        <div class="vigor"></div>
-    </div>
-    <div class="summary-control {{computeMisc()}}">
-        <h6>CONTROL / MISC</h6>
-        <div class="daze"></div>
-        <div class="float"></div>
-        <div class="knockback"></div>
-        <div class="knockdown"></div>
-        <div class="launch"></div>
-        <div class="pull"></div>
-        <div class="sink"></div>
-        <div class="stun"></div>
-        <div class="barrier"></div>
-        <div class="breaks_stun"></div>
-        <div class="healing"></div>
-        <div class="stealth"></div>
-        <div class="superspeed"></div>
-        <div class="teleport"></div>
-        <div class="evade"></div>
+    <app-boon-table [party]="party"></app-boon-table>
+    <app-control-misc-table [party]="party"></app-control-misc-table>
 
-    </div>
 </div>

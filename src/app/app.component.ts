@@ -32,8 +32,4 @@ export class AppComponent implements OnInit {
   generateLink() {
 
   }
-
-  notifyClassPanel($event: Array<any>) {
-
-  }
 }

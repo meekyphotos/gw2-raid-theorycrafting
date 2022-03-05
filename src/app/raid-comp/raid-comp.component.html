@@ -1,12 +1,7 @@
 <div (drop)="drop($event)" (dragover)="allowDrop($event)">
-    <app-group [groupId]="0" [title]="'Group 1'" [party]="group[0]" (receivedItem)="handleReceived($event)" (updated)="emitUpdates()"></app-group>
-    <app-group [groupId]="1" [title]="'Group 2'" [party]="group[1]" (receivedItem)="handleReceived($event)" (updated)="emitUpdates()"></app-group>
-    <app-group [groupId]="2" [title]="'Group 3'" [party]="group[2]" (receivedItem)="handleReceived($event)" (updated)="emitUpdates()"></app-group>
-    <app-group [groupId]="3" [title]="'Group 4'" [party]="group[3]" (receivedItem)="handleReceived($event)" (updated)="emitUpdates()"></app-group>
-    <app-group [groupId]="4" [title]="'Group 5'" [party]="group[4]" (receivedItem)="handleReceived($event)" (updated)="emitUpdates()"></app-group>
-    <app-group [groupId]="5" [title]="'Group 6'" [party]="group[5]" (receivedItem)="handleReceived($event)" (updated)="emitUpdates()"></app-group>
-    <app-group [groupId]="6" [title]="'Group 7'" [party]="group[6]" (receivedItem)="handleReceived($event)" (updated)="emitUpdates()"></app-group>
-    <app-group [groupId]="7" [title]="'Group 8'" [party]="group[7]" (receivedItem)="handleReceived($event)" (updated)="emitUpdates()"></app-group>
-    <app-group [groupId]="8" [title]="'Group 9'" [party]="group[8]" (receivedItem)="handleReceived($event)" (updated)="emitUpdates()"></app-group>
-    <app-group [groupId]="9" [title]="'Group 10'" [party]="group[9]" (receivedItem)="handleReceived($event)" (updated)="emitUpdates()"></app-group>
+    <app-group [groupId]="0" [title]="'Group 1'" [(party)]="group[0]" (receivedItem)="handleReceived($event)"></app-group>
+    <app-group [groupId]="1" [title]="'Group 2'" [(party)]="group[1]" (receivedItem)="handleReceived($event)"></app-group>
+    <app-group [groupId]="2" [title]="'Group 3'" [(party)]="group[2]" (receivedItem)="handleReceived($event)"></app-group>
+    <app-group [groupId]="3" [title]="'Group 4'" [(party)]="group[3]" (receivedItem)="handleReceived($event)"></app-group>
+    <app-group [groupId]="4" [title]="'Group 5'" [(party)]="group[4]" (receivedItem)="handleReceived($event)"></app-group>
 </div>

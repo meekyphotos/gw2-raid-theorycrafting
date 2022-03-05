@@ -1,0 +1,124 @@
+<div class="summary-boons">
+    <h6>Boons</h6>
+    <div class="indicator"
+         [class.indicator-off]="aegis == 'no'"
+         [class.indicator-weak]="aegis == 'weak'"
+         [class.indicator-strong]="aegis == 'ok'"
+         [ngxTippy]="aegisSkillFact">
+        <img src="assets/status/Aegis.png" alt="aegis"/>
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="alacrity == 'no'"
+         [class.indicator-weak]="alacrity == 'weak'"
+         [class.indicator-strong]="alacrity == 'ok'"
+         [ngxTippy]="alacritySkillFact">
+        <img src="assets/status/Alacrity.png" alt="alacrity"/>
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="fury == 'no'"
+         [class.indicator-weak]="fury == 'weak'"
+         [class.indicator-strong]="fury == 'ok'"
+         [ngxTippy]="furySkillFact">
+        <img src="assets/status/Fury.png" alt="fury"/>
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="might == 'no'"
+         [class.indicator-weak]="might == 'weak'"
+         [class.indicator-strong]="might == 'ok'"
+         [ngxTippy]="mightSkillFact">
+        <img src="assets/status/Might.png" alt="might"/>
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="protection == 'no'"
+         [class.indicator-weak]="protection == 'weak'"
+         [class.indicator-strong]="protection == 'ok'"
+         [ngxTippy]="protectionSkillFact">
+        <img src="assets/status/Protection.png" alt="protection"/>
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="quickness == 'no'"
+         [class.indicator-weak]="quickness == 'weak'"
+         [class.indicator-strong]="quickness == 'ok'"
+         [ngxTippy]="quicknessSkillFact">
+        <img src="assets/status/Quickness.png" alt="quickness"/>
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="regen == 'no'"
+         [class.indicator-weak]="regen == 'weak'"
+         [class.indicator-strong]="regen == 'ok'"
+         [ngxTippy]="regenSkillFact">
+        <img src="assets/status/Regeneration.png" alt="regen"/>
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="resistance == 'no'"
+         [class.indicator-weak]="resistance == 'weak'"
+         [class.indicator-strong]="resistance == 'ok'"
+         [ngxTippy]="resistanceSkillFact">
+        <img src="assets/status/Resistance.png" alt="resistance"/>
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="resolution == 'no'"
+         [class.indicator-weak]="resolution == 'weak'"
+         [class.indicator-strong]="resolution == 'ok'"
+         [ngxTippy]="resolutionSkillFact">
+        <img src="assets/status/Resolution.png" alt="resolution"/>
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="stability == 'no'"
+         [class.indicator-weak]="stability == 'weak'"
+         [class.indicator-strong]="stability == 'ok'"
+         [ngxTippy]="stabilitySkillFact">
+        <img src="assets/status/Stability.png" alt="stability"/>
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="swiftness == 'no'"
+         [class.indicator-weak]="swiftness == 'weak'"
+         [class.indicator-strong]="swiftness == 'ok'"
+         [ngxTippy]="swiftnessSkillFact">
+        <img src="assets/status/Swiftness.png" alt="swiftness"/>
+    </div>
+    <div class="indicator"
+         [class.indicator-off]="vigor == 'no'"
+         [class.indicator-weak]="vigor == 'weak'"
+         [class.indicator-strong]="vigor == 'ok'"
+         [ngxTippy]="vigorSkillFact">
+        <img src="assets/status/Vigor.png" alt="vigor"/>
+    </div>
+</div>
+
+<ng-template #aegisSkillFact>
+    <app-skill-fact skill="aegis" [modifier]="aegis"></app-skill-fact>
+</ng-template>
+<ng-template #alacritySkillFact>
+    <app-skill-fact skill="alacrity" [modifier]="alacrity"></app-skill-fact>
+</ng-template>
+<ng-template #furySkillFact>
+    <app-skill-fact skill="fury" [modifier]="fury"></app-skill-fact>
+</ng-template>
+<ng-template #mightSkillFact>
+    <app-skill-fact skill="might" [modifier]="might"></app-skill-fact>
+</ng-template>
+<ng-template #protectionSkillFact>
+    <app-skill-fact skill="protection" [modifier]="protection"></app-skill-fact>
+</ng-template>
+<ng-template #quicknessSkillFact>
+    <app-skill-fact skill="quickness" [modifier]="quickness"></app-skill-fact>
+</ng-template>
+<ng-template #regenSkillFact>
+    <app-skill-fact skill="regeneration" [modifier]="regen"></app-skill-fact>
+</ng-template>
+<ng-template #resistanceSkillFact>
+    <app-skill-fact skill="resistance" [modifier]="resistance"></app-skill-fact>
+</ng-template>
+<ng-template #resolutionSkillFact>
+    <app-skill-fact skill="resolution" [modifier]="resolution"></app-skill-fact>
+</ng-template>
+<ng-template #stabilitySkillFact>
+    <app-skill-fact skill="stability" [modifier]="stability"></app-skill-fact>
+</ng-template>
+<ng-template #swiftnessSkillFact>
+    <app-skill-fact skill="swiftness" [modifier]="swiftness"></app-skill-fact>
+</ng-template>
+<ng-template #vigorSkillFact>
+    <app-skill-fact skill="vigor" [modifier]="vigor"></app-skill-fact>
+</ng-template>
