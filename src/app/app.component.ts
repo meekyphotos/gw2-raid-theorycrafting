@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
   }
 
   private baseLink() {
-    return window.location.protocol + '//' + window.location.hostname + (location.port ? ':' + location.port : '') + '?';
+    return window.location.protocol + '//' + window.location.hostname + (location.port ? ':' + location.port : '') + '/gw2-raid-theorycrafting/?';
   }
 
   private readLink(href: string) {
