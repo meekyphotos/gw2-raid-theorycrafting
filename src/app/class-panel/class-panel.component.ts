@@ -10,7 +10,7 @@ import {defs} from "../class.definitions";
 export class ClassPanelComponent implements OnInit {
   @Output() ready: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  _allSpecializations = Object.values(defs).map(it => it.name)
+  _allSpecializations = Object.values(defs)
   static getCoreFromSpecialization(spec: string): string {
     // @ts-ignore
     return defs[spec].core
@@ -19,6 +19,7 @@ export class ClassPanelComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.ready.emit(true)
   }
 
   drag(specialization: any, number: number, $event: DragEvent) {

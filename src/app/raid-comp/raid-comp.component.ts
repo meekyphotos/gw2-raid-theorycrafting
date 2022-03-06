@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {DragData, ReceivedItemEvent} from "../class.service";
+import {Specialization} from "../class.definitions";
 
 @Component({
              selector: 'app-raid-comp',
@@ -7,8 +8,8 @@ import {DragData, ReceivedItemEvent} from "../class.service";
              styleUrls: ['./raid-comp.component.css']
            })
 export class RaidCompComponent implements OnInit {
-  @Input() group: Array<Array<string | null>> = [];
-  @Output() groupChange: EventEmitter<Array<Array<string | null>>> = new EventEmitter<Array<Array<string | null>>>();
+  @Input() group: Array<Array<Specialization | null>> = [];
+  @Output() groupChange: EventEmitter<Array<Array<Specialization | null>>> = new EventEmitter<Array<Array<Specialization | null>>>();
   @Output() changesToSquad: EventEmitter<Array<any>> = new EventEmitter<Array<any>>();
 
   constructor() {

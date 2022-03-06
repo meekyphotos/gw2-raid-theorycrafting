@@ -1,4 +1,6 @@
-interface Specialization {
+export interface Specialization {
+  code: number,
+  img: string,
   name: string,
   core: string,
   role: 'damage' | 'support' | 'cc',
@@ -35,6 +37,8 @@ interface Specialization {
 }
 
 const guardian: Specialization = {
+  code: 1,
+  img: 'guardian',
   name: 'Guardian',
   core: 'guardian',
   role: 'damage',
@@ -47,6 +51,8 @@ const guardian: Specialization = {
   }
 }
 const dragonhunter: Specialization = {
+  code: 2,
+  img: 'dragonhunter',
   name: 'Dragonhunter',
   core: 'guardian',
   role: 'damage',
@@ -60,6 +66,8 @@ const dragonhunter: Specialization = {
   }
 }
 const firebrand: Specialization = {
+  code: 3,
+  img: 'firebrand',
   name: 'Firebrand',
   core: 'guardian',
   role: 'support',
@@ -83,6 +91,8 @@ const firebrand: Specialization = {
   }
 }
 const willbender: Specialization = {
+  code: 4,
+  img: 'willbender',
   name: 'Willbender',
   core: 'guardian',
   role: 'damage',
@@ -95,7 +105,9 @@ const willbender: Specialization = {
 }
 
 const herald: Specialization = {
+  code: 5,
   name: 'Herald',
+  img: 'herald',
   core: 'revenant',
   role: 'damage',
   boons: {
@@ -113,6 +125,8 @@ const herald: Specialization = {
   }
 }
 const renegade: Specialization = {
+  code: 6,
+  img: 'renegade',
   name: 'Renegade',
   core: 'revenant',
   role: 'damage',
@@ -127,7 +141,9 @@ const renegade: Specialization = {
   }
 }
 const vindicator: Specialization = {
-  name: 'Vindicator',
+  code: 7,
+  img: 'vindicator',
+  name: 'Vindicator (Support)',
   core: 'revenant',
   role: 'support',
   boons: {
@@ -143,7 +159,22 @@ const vindicator: Specialization = {
     launch: 1
   }
 }
+const powerVindicator: Specialization = {
+  code: 8,
+  img: 'vindicator',
+  name: 'Vindicator (Power)',
+  core: 'revenant',
+  role: 'damage',
+  boons: {
+    stability: 2,
+  },
+  misc: {
+  }
+}
+
 const berserker: Specialization = {
+  code: 9,
+  img: 'berserker',
   name: 'Berserker',
   core: 'warrior',
   role: 'damage',
@@ -153,6 +184,8 @@ const berserker: Specialization = {
   }
 }
 const spellbreaker: Specialization = {
+  code: 10,
+  img: 'spellbreaker',
   name: 'Spellbreaker',
   core: 'warrior',
   role: 'cc',
@@ -170,6 +203,8 @@ const spellbreaker: Specialization = {
 }
 
 const scrapper: Specialization = {
+  code: 11,
+  img: 'scrapper',
   name: 'Scrapper',
   core: 'engineer',
   role: 'support',
@@ -197,6 +232,8 @@ const scrapper: Specialization = {
 }
 
 const mechanist: Specialization = {
+  code: 12,
+  img: 'mechanist',
   name: 'Mechanist',
   core: 'engineer',
   role: 'support',
@@ -225,6 +262,8 @@ const mechanist: Specialization = {
 }
 
 const daredevil: Specialization = {
+  code: 13,
+  img: 'daredevil',
   name: 'Daredevil',
   core: 'thief',
   role: 'damage',
@@ -238,6 +277,8 @@ const daredevil: Specialization = {
   }
 }
 const specter: Specialization = {
+  code: 14,
+  img: 'specter',
   name: 'Specter',
   core: 'thief',
   role: 'support',
@@ -255,6 +296,8 @@ const specter: Specialization = {
   }
 }
 const tempest: Specialization = {
+  code: 15,
+  img: 'tempest',
   name: 'Tempest',
   core: 'elementalist',
   role: 'support',
@@ -270,6 +313,8 @@ const tempest: Specialization = {
   }
 }
 const weaver: Specialization = {
+  code: 16,
+  img: 'weaver',
   name: 'Weaver',
   core: 'elementalist',
   role: 'damage',
@@ -280,6 +325,8 @@ const weaver: Specialization = {
   }
 }
 const catalyst: Specialization = {
+  code: 17,
+  img: 'catalyst',
   name: 'Catalyst',
   core: 'elementalist',
   role: 'damage',
@@ -291,6 +338,8 @@ const catalyst: Specialization = {
 }
 
 const chronomancer: Specialization = {
+  code: 18,
+  img: 'chronomancer',
   name: 'Chronomancer',
   core: 'mesmer',
   role: 'cc',
@@ -306,6 +355,8 @@ const chronomancer: Specialization = {
 }
 
 const virtuoso: Specialization = {
+  code: 19,
+  img: 'virtuoso',
   name: 'Virtuoso',
   core: 'mesmer',
   role: 'damage',
@@ -318,6 +369,8 @@ const virtuoso: Specialization = {
 }
 
 const reaper: Specialization = {
+  code: 20,
+  img: 'reaper',
   name: 'Reaper',
   core: 'necromancer',
   role: 'damage',
@@ -327,6 +380,8 @@ const reaper: Specialization = {
   }
 }
 const scourge: Specialization = {
+  code: 21,
+  img: 'scourge',
   name: 'Scourge',
   core: 'necromancer',
   role: 'damage',
@@ -338,6 +393,8 @@ const scourge: Specialization = {
   }
 }
 const harbinger: Specialization = {
+  code: 22,
+  img: 'harbinger',
   name: 'Harbinger',
   core: 'necromancer',
   role: 'damage',
@@ -353,6 +410,7 @@ export const defs: {[k: string]: Specialization} = {
   herald,
   renegade,
   vindicator,
+  powerVindicator,
   berserker,
   spellbreaker,
   scrapper,

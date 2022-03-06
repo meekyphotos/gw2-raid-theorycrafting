@@ -1,27 +1,26 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ClassPanelComponent} from "../class-panel/class-panel.component";
+import {Specialization} from "../class.definitions";
 
 @Component({
-  selector: 'app-spot',
-  templateUrl: './spot.component.html',
-  styleUrls: ['./spot.component.css']
-})
+             selector: 'app-spot',
+             templateUrl: './spot.component.html',
+             styleUrls: ['./spot.component.css']
+           })
 export class SpotComponent implements OnInit {
   name: string = '';
   image: string = '';
   @Input()
-  specialization: string = '';
+  specialization ?: Specialization = undefined;
   core: string = '';
-
-
-
-  constructor() { }
+  smallerFont: boolean = false
 
   ngOnInit(): void {
-    this.name = this.specialization;
-    this.specialization = this.specialization.toLowerCase()
-    this.image = 'assets/img/' + this.specialization + '.png';
-    this.core = ClassPanelComponent.getCoreFromSpecialization(this.specialization).toLowerCase();
+    if (this.specialization) {
+      this.name = this.specialization.name;
+      this.image = 'assets/img/' + this.specialization.img + '.png';
+      this.core = this.specialization.core;
+      this.smallerFont = this.name.length > 12
+    }
   }
 
 }

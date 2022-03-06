@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {DragData, ReceivedItemEvent} from "../../class.service";
-import {defs} from "../../class.definitions";
+import {defs, Specialization} from "../../class.definitions";
 
 @Component({
              selector: 'app-group',
@@ -10,8 +10,8 @@ import {defs} from "../../class.definitions";
 export class GroupComponent implements OnInit {
   @Input() title: string = '';
   @Input() groupId: number = 0;
-  @Input() party: Array<string | null> = [];
-  @Output() partyChange: EventEmitter<Array<string | null>> = new EventEmitter<Array<string | null>>();
+  @Input() party: Array<Specialization | null> = [];
+  @Output() partyChange: EventEmitter<Array<Specialization | null>> = new EventEmitter<Array<Specialization | null>>();
   @Output() receivedItem: EventEmitter<ReceivedItemEvent> = new EventEmitter<ReceivedItemEvent>();
 
   constructor() {

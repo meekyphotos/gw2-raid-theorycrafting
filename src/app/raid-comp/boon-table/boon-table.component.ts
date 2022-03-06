@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {defs} from "../../class.definitions";
+import {Specialization} from "../../class.definitions";
 
 @Component({
              selector: 'app-boon-table',
@@ -7,7 +7,7 @@ import {defs} from "../../class.definitions";
              styleUrls: ['./boon-table.component.css']
            })
 export class BoonTableComponent implements OnInit, OnChanges {
-  @Input() party: Array<string | null> = [];
+  @Input() party: Array<Specialization | null> = [];
   aegis: string = 'no';
   alacrity: string = 'no';
   fury: string = 'no';
@@ -42,8 +42,8 @@ export class BoonTableComponent implements OnInit, OnChanges {
     let swiftnessValue = 0
     let vigorValue = 0
     for (const partyElement of this.party) {
-      if ( partyElement ) {
-        const classDef = defs[partyElement.toLowerCase()].boons
+      if (partyElement) {
+        const classDef = partyElement.boons
         aegisValue += classDef.aegis || 0
         alacrityValue += classDef.alacrity || 0
         furyValue += classDef.fury || 0

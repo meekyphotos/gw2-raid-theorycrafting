@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import {Specialization} from "./class.definitions";
 
 export interface DragData {
   hasSource: boolean;
   groupId: number | undefined;
   positionId: number | undefined;
-  what: string | null;
+  what: Specialization | null;
 }
 
 export interface SpotAssignment {

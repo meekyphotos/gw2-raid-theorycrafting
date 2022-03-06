@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {defs} from "../../class.definitions";
+import {Specialization} from "../../class.definitions";
 
 @Component({
              selector: 'app-control-misc-table',
@@ -7,10 +7,7 @@ import {defs} from "../../class.definitions";
              styleUrls: ['./control-misc-table.component.css']
            })
 export class ControlMiscTableComponent implements OnInit, OnChanges {
-  @Input() party: Array<string | null> = [];
-
-  constructor() {
-  }
+  @Input() party: Array<Specialization | null> = [];
 
   daze = 'no'
   float = 'no'
@@ -53,7 +50,7 @@ export class ControlMiscTableComponent implements OnInit, OnChanges {
     for (const partyElement of this.party) {
       if (partyElement != null) {
         // @ts-ignore
-        const classDef = defs[partyElement.toLowerCase()]
+        const classDef = partyElement
         dazeValue += classDef.misc.daze || 0
         floatValue += classDef.misc.float || 0
         knockbackValue += classDef.misc.knockback || 0

@@ -43,6 +43,9 @@ body {
   font-weight: bold;
   text-align: left;
   cursor: pointer;
+  &-smaller {
+    font-size: 12px;
+  }
 
   .name {
     float: left;

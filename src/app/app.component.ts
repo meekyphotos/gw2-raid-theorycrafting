@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ClassPanelComponent} from "./class-panel/class-panel.component";
+import {Specialization} from "./class.definitions";
 
 @Component({
              selector: 'app-root',
@@ -21,15 +22,26 @@ export class AppComponent implements OnInit {
     this.group[9] = [null, null, null, null, null];
   }
 
-  group: Array<Array<string | null>> = [];
+  group: Array<Array<Specialization | null>> = [];
   currentLink: string = '';
   @ViewChild('classPanel') classPanel: ClassPanelComponent | undefined = undefined;
 
   onClassPanelReady() {
-    // load
+    const href = window.location.search.substring(1);
+    if (href) {
+      this.readLink(href);
+    }
   }
 
   generateLink() {
 
+  }
+
+  private baseLink() {
+    return window.location.protocol + '//' + window.location.hostname + (location.port ? ':' + location.port : '') + '?';
+  }
+
+  private readLink(href: string) {
+    console.log(href)
   }
 }

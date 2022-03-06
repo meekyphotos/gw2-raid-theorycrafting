@@ -1,6 +1,6 @@
-<div class="indicator" [class.indicator-off]="damageSpecs.length == 0" [ngxTippy]="damageSkillFact">
+<div class="indicator" [class.indicator-off]="damageCount == 0" [ngxTippy]="damageSkillFact">
     <img src="assets/controls/Power_attribute.png" alt="dps"/>
-    <div class="counter" *ngIf="damageSpecs.length">{{damageSpecs.length}}</div>
+    <div class="counter" *ngIf="damageCount">{{damageCount}}</div>
 </div>
 <div class="indicator" [class.indicator-off]="ccCount == 0" [ngxTippy]="ccSkillFact">
     <img src="assets/controls/Daze.png" alt="support">
