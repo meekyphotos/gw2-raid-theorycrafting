@@ -31,7 +31,6 @@ export class RaidCompComponent implements OnInit {
     if (ev.dataTransfer != null) {
       const data = ev.dataTransfer.getData('text');
       const spotAssignment: DragData = JSON.parse(data);
-      console.log('handling drop')
       if (spotAssignment.hasSource && spotAssignment.groupId != undefined && spotAssignment.positionId != undefined) {
         this.groupChange.emit(
           this.group.map((it, index) => {

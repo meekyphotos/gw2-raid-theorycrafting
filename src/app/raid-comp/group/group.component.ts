@@ -44,7 +44,6 @@ export class GroupComponent implements OnInit {
     if (ev.dataTransfer != null) {
       const data = ev.dataTransfer.getData('text');
       const spotAssignment: DragData = JSON.parse(data);
-      console.log('dropping to', slotIndex, spotAssignment)
       if (spotAssignment.hasSource) {
         if (spotAssignment.groupId === this.groupId) {
           if (spotAssignment.positionId !== slotIndex && spotAssignment.positionId != undefined) {

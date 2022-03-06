@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ClassPanelComponent} from "./class-panel/class-panel.component";
-import {Specialization} from "./class.definitions";
+import {defs, Specialization} from "./class.definitions";
 
 @Component({
              selector: 'app-root',
@@ -15,11 +15,6 @@ export class AppComponent implements OnInit {
     this.group[2] = [null, null, null, null, null];
     this.group[3] = [null, null, null, null, null];
     this.group[4] = [null, null, null, null, null];
-    this.group[5] = [null, null, null, null, null];
-    this.group[6] = [null, null, null, null, null];
-    this.group[7] = [null, null, null, null, null];
-    this.group[8] = [null, null, null, null, null];
-    this.group[9] = [null, null, null, null, null];
   }
 
   group: Array<Array<Specialization | null>> = [];
@@ -34,7 +29,11 @@ export class AppComponent implements OnInit {
   }
 
   generateLink() {
-
+    let codes = this.group.map(party => {
+      return party.filter(elem => elem).map(elem => elem?.code || 0);
+    });
+    let s = JSON.stringify(codes);
+    location.href = this.baseLink() + btoa(s)
   }
 
   private baseLink() {
@@ -42,6 +41,29 @@ export class AppComponent implements OnInit {
   }
 
   private readLink(href: string) {
-    console.log(href)
+    try {
+      const parse = JSON.parse(atob(href)) as Array<Array<number | null>>;
+      const withNulls = parse.map(it => {
+        while(it.length < 5) {
+          it.push(null)
+        }
+        return it
+      })
+      this.group = withNulls.map(party => party.map(elem => {
+        if (elem != null) {
+          let specialization = this.lookupClass(elem);
+          return specialization || null;
+        } else {
+          return null;
+        }
+      }))
+      this.currentLink = window.location.href
+    } catch (e) {
+    }
+
+  }
+
+  private lookupClass(elem: number): Specialization | undefined {
+    return Object.values(defs).find(item => item.code == elem)
   }
 }
