@@ -119,7 +119,7 @@ const herald: Specialization = {
     stability: 2
   },
   misc: {
-    superspeed: 5,
+    superspeed: 2,
     knockdown: 2,
     launch: 2
   }
