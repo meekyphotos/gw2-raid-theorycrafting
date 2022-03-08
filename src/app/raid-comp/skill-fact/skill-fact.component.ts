@@ -106,6 +106,10 @@ const skillFacts = {
     name: 'Superspeed',
     description: 'Superspeed is an effect that provides a 100% increase to movement speed. Other effects that provide a bonus to movement speed (e.g. Swiftness, certain traits and signets) do not stack with superspeed; only the highest increase in movement speed will be applied. Superspeed stacks in duration, up to 10 seconds.'
   },
+  blastFinisher: {
+    name: 'Blast finisher',
+    description: 'A blast finisher is a skill that can create a combo effect by interacting with a combo field. All blast combos create area effects with a range of 360.'
+  },
 
 }
 

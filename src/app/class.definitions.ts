@@ -33,6 +33,7 @@ export interface Specialization {
     stealth?: number,
     superspeed?: number,
     cleanse?: number
+    blastFinisher?: number
   }
 }
 
@@ -47,7 +48,8 @@ const guardian: Specialization = {
     resolution: 5
   },
   misc: {
-    knockdown: 1
+    knockdown: 1,
+    blastFinisher: 5
   }
 }
 const dragonhunter: Specialization = {
@@ -62,7 +64,8 @@ const dragonhunter: Specialization = {
   },
   misc: {
     knockdown: 1,
-    pull: 1
+    pull: 1,
+    blastFinisher: 5
   }
 }
 const firebrand: Specialization = {
@@ -87,7 +90,8 @@ const firebrand: Specialization = {
     healing: 2,
     breaks_stun: 5,
     pull: 2,
-    cleanse: 2
+    cleanse: 2,
+    blastFinisher: 5
   }
 }
 const willbender: Specialization = {
@@ -101,7 +105,9 @@ const willbender: Specialization = {
     stability: 2,
     resolution: 2
   },
-  misc: {}
+  misc: {
+    blastFinisher: 5
+  }
 }
 
 const herald: Specialization = {
@@ -121,7 +127,8 @@ const herald: Specialization = {
   misc: {
     superspeed: 2,
     knockdown: 2,
-    launch: 2
+    launch: 2,
+    blastFinisher: 2
   }
 }
 const renegade: Specialization = {
@@ -156,7 +163,8 @@ const vindicator: Specialization = {
     healing: 5,
     barrier: 5,
     cleanse: 3,
-    launch: 1
+    launch: 1,
+    blastFinisher: 2
   }
 }
 const powerVindicator: Specialization = {
@@ -169,6 +177,7 @@ const powerVindicator: Specialization = {
     stability: 2,
   },
   misc: {
+    blastFinisher: 2
   }
 }
 
@@ -227,7 +236,8 @@ const scrapper: Specialization = {
     superspeed: 5,
     healing: 5,
     stealth: 5,
-    cleanse: 5
+    cleanse: 5,
+    blastFinisher: 5
   }
 }
 
@@ -257,7 +267,8 @@ const mechanist: Specialization = {
     knockback: 1,
     barrier: 5,
     healing: 5,
-    cleanse: 5
+    cleanse: 5,
+    blastFinisher: 5
   }
 }
 
@@ -309,7 +320,8 @@ const tempest: Specialization = {
   },
   misc: {
     healing: 5,
-    cleanse: 5
+    cleanse: 5,
+    blastFinisher: 5
   }
 }
 const weaver: Specialization = {

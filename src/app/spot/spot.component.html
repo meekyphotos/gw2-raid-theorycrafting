@@ -1,4 +1,13 @@
-<div class="{{core}} spot" [class.spot-smaller]="smallerFont">
+<div class="{{core}} spot" [class.spot-smaller]="smallerFont && !editable">
     <img [src]="image"/>
-    <div>{{name}}</div>
+    <div *ngIf="!editable">{{name}}</div>
+    <div *ngIf="editable">
+        <editable (save)="update()" (cancel)="cancel()">
+            <ng-template viewMode>{{ name }}</ng-template>
+
+            <ng-template editMode>
+                <input editableOnEnter editableOnEscape [formControl]="control" />
+            </ng-template>
+        </editable>
+    </div>
 </div>

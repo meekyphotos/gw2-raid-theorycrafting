@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
 
   generateLink() {
     let codes = this.group.map(party => {
-      return party.filter(elem => elem).map(elem => elem?.code || 0);
+      return party.filter(elem => elem).map(elem => elem?.code + "|" + elem?.name);
     });
     let s = JSON.stringify(codes);
     location.href = this.baseLink() + btoa(s)
@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
 
   private readLink(href: string) {
     try {
-      const parse = JSON.parse(atob(href)) as Array<Array<number | null>>;
+      const parse = JSON.parse(atob(href)) as Array<Array<string | null>>;
       const withNulls = parse.map(it => {
         while(it.length < 5) {
           it.push(null)
@@ -51,7 +51,14 @@ export class AppComponent implements OnInit {
       })
       this.group = withNulls.map(party => party.map(elem => {
         if (elem != null) {
-          let specialization = this.lookupClass(elem);
+          let strings = elem.split("|");
+          let specialization = this.lookupClass(+strings[0]);
+          if ( strings[1] && specialization) {
+            return {
+              ...specialization,
+              name: strings[1]
+            }
+          }
           return specialization || null;
         } else {
           return null;

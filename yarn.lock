@@ -160,7 +160,7 @@
     "symbol-observable" "4.0.0"
     "uuid" "8.3.2"
 
-"@angular/common@~13.2.0", "@angular/common@13.2.5":
+"@angular/common@>=8.0.0", "@angular/common@~13.2.0", "@angular/common@13.2.5":
   "integrity" "sha512-px2qZP8Fd2qYbCVWmgLmop2OBQ/LKU2Oq8U/La2EEo8kgVuNWNTxmIh826cgZK/v9VQw8b/EoU7PeEjSWz0Zow=="
   "resolved" "https://registry.npmjs.org/@angular/common/-/common-13.2.5.tgz"
   "version" "13.2.5"
@@ -190,7 +190,7 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/core@~13.2.0", "@angular/core@13.2.5":
+"@angular/core@>=8.0.0", "@angular/core@~13.2.0", "@angular/core@13.2.5":
   "integrity" "sha512-4CC69JQbgyETJR6xsQk6hOQqb6fBGZ/Qc333x0hwRDBbGnYE6hQehDibV+Apljea8YjV+NX6VmyOvPvHhtL4PQ=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-13.2.5.tgz"
   "version" "13.2.5"
@@ -1262,6 +1262,13 @@
   dependencies:
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
+
+"@ngneat/edit-in-place@^1.6.1":
+  "integrity" "sha512-7TJlCMSBe0meyBmEfUrvQlFkmzL7Z465Uvxn1N/XMpZCWIQ4Z05wA+5WyGLHwINwl1koDx1pEkU7YlCwIGXtYQ=="
+  "resolved" "https://registry.npmjs.org/@ngneat/edit-in-place/-/edit-in-place-1.6.1.tgz"
+  "version" "1.6.1"
+  dependencies:
+    "tslib" "^2.0.0"
 
 "@ngtools/webpack@13.2.5":
   "integrity" "sha512-obiPvwPe+UJUO8cfNbBxukLKG30F+gLF5/erexwklRknJzS4KP8ciH2on6XlTuXUahpDjbO0pffugFE2I/IszQ=="

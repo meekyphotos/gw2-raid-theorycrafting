@@ -23,6 +23,7 @@ export class ControlMiscTableComponent implements OnInit, OnChanges {
   cleanse = 'no'
   stealth = 'no'
   superspeed = 'no'
+  blastFinisher = 'no';
 
   ngOnInit(): void {
     this.updateStats()
@@ -47,6 +48,7 @@ export class ControlMiscTableComponent implements OnInit, OnChanges {
     let cleanseValue = 0
     let stealthValue = 0
     let superspeedValue = 0
+    let blastFinisherValue = 0
     for (const partyElement of this.party) {
       if (partyElement != null) {
         // @ts-ignore
@@ -65,6 +67,7 @@ export class ControlMiscTableComponent implements OnInit, OnChanges {
         cleanseValue += classDef.misc.cleanse || 0
         stealthValue += classDef.misc.stealth || 0
         superspeedValue += classDef.misc.superspeed || 0
+        blastFinisherValue += classDef.misc.blastFinisher || 0
       }
     }
     this.daze = this.toStringValue(dazeValue)
@@ -81,6 +84,7 @@ export class ControlMiscTableComponent implements OnInit, OnChanges {
     this.cleanse = this.toStringValue(cleanseValue)
     this.stealth = this.toStringValue(stealthValue)
     this.superspeed = this.toStringValue(superspeedValue)
+    this.blastFinisher = this.toStringValue(blastFinisherValue)
   }
 
   toStringValue(name: number): string {

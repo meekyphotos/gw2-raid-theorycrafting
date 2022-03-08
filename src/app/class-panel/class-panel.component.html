@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <ul class="flexbox">
             <li *ngFor="let specialization of _allSpecializations, let i = index" class="block" draggable="true" (dragstart)="drag(specialization, 0, $event)" >
-                <app-spot [specialization]="specialization"></app-spot>
+                <app-spot [specialization]="specialization" [editable]="false"></app-spot>
             </li>
         </ul>
     </div>

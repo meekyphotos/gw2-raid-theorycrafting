@@ -4,7 +4,7 @@
     <ul class="list-unstyled">
         <ng-container *ngFor="let partySlot of party; let i = index">
             <li class="slot" draggable="true" (dragstart)="drag(i, $event)" (drop)="drop(i, $event)" (dragover)="allowDrop($event)">
-                <app-spot *ngIf="partySlot" [specialization]="partySlot"></app-spot>
+                <app-spot *ngIf="partySlot" [specialization]="partySlot" [editable]="true"></app-spot>
             </li>
         </ng-container>
     </ul>
