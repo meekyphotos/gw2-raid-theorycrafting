@@ -15,6 +15,11 @@ export class AppComponent implements OnInit {
     this.group[2] = [null, null, null, null, null];
     this.group[3] = [null, null, null, null, null];
     this.group[4] = [null, null, null, null, null];
+    this.group[5] = [null, null, null, null, null];
+    this.group[6] = [null, null, null, null, null];
+    this.group[7] = [null, null, null, null, null];
+    this.group[8] = [null, null, null, null, null];
+    this.group[9] = [null, null, null, null, null];
   }
 
   group: Array<Array<Specialization | null>> = [];
@@ -31,7 +36,7 @@ export class AppComponent implements OnInit {
   generateLink() {
     let codes = this.group.map(party => {
       return party.filter(elem => elem).map(elem => elem?.code + "|" + elem?.name);
-    });
+    }).filter(it => it.length > 0);
     let s = JSON.stringify(codes);
     location.href = this.baseLink() + btoa(s)
   }
@@ -43,12 +48,25 @@ export class AppComponent implements OnInit {
   private readLink(href: string) {
     try {
       const parse = JSON.parse(atob(href)) as Array<Array<string | null>>;
-      const withNulls = parse.map(it => {
+      let withNulls = parse.map(it => {
         while(it.length < 5) {
           it.push(null)
         }
         return it
       })
+      withNulls.push(
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+      )
+      withNulls = withNulls.slice(0, 10)
       this.group = withNulls.map(party => party.map(elem => {
         if (elem != null) {
           let strings = elem.split("|");
