@@ -1,6 +1,6 @@
 <div class="group">
     <div class="desc">{{title}}</div>
-    <app-group-stats [party]="party"></app-group-stats>
+
     <ul class="list-unstyled">
         <ng-container *ngFor="let partySlot of party; let i = index">
             <li class="slot" draggable="true" (dragstart)="drag(i, $event)" (drop)="drop(i, $event)" (dragover)="allowDrop($event)">
@@ -10,8 +10,9 @@
     </ul>
     <div class="count" [class.full]="isFull()">
         <h6>Count {{countParty()}} / 5</h6>
+        <app-group-stats [party]="party"></app-group-stats>
     </div>
-    <app-boon-table [party]="party"></app-boon-table>
-    <app-control-misc-table [party]="party"></app-control-misc-table>
-
+    <app-boon-table [party]="party" class="hide-small"></app-boon-table>
+    <app-control-misc-table [party]="party" class="hide-small"></app-control-misc-table>
 </div>
+

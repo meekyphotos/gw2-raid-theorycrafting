@@ -192,10 +192,10 @@ const berserker: Specialization = {
   misc: {
   }
 }
-const spellbreaker: Specialization = {
+const spellbreakerSupport: Specialization = {
   code: 10,
   img: 'spellbreaker',
-  name: 'Spellbreaker',
+  name: 'Spellbreaker (support)',
   core: 'warrior',
   role: 'cc',
   boons: {
@@ -204,6 +204,25 @@ const spellbreaker: Specialization = {
   },
   misc: {
     barrier: 2,
+    daze: 3,
+    stun: 3,
+    knockdown: 3,
+    knockback: 3
+  }
+}
+
+const spellbreaker: Specialization = {
+  code: 10,
+  img: 'spellbreaker',
+  name: 'Spellbreaker (Power)',
+  core: 'warrior',
+  role: 'cc',
+  boons: {
+    fury: 0,
+    swiftness: 0
+  },
+  misc: {
+    barrier: 0,
     daze: 3,
     stun: 3,
     knockdown: 3,
@@ -413,6 +432,24 @@ const harbinger: Specialization = {
   boons: {},
   misc: {}
 }
+const soulbeast: Specialization = {
+  code: 23,
+  img: 'soulbeast',
+  name: 'Soulbeast',
+  core: 'ranger',
+  role: 'damage',
+  boons: {},
+  misc: {}
+}
+const druid: Specialization = {
+  code: 23,
+  img: 'druid',
+  name: 'Druid',
+  core: 'ranger',
+  role: 'support',
+  boons: {},
+  misc: {}
+}
 
 export const defs: {[k: string]: Specialization} = {
   guardian,
@@ -421,10 +458,10 @@ export const defs: {[k: string]: Specialization} = {
   willbender,
   herald,
   renegade,
-  vindicator,
   powerVindicator,
   berserker,
   spellbreaker,
+  spellbreakerSupport,
   scrapper,
   mechanist,
   daredevil,
@@ -437,4 +474,6 @@ export const defs: {[k: string]: Specialization} = {
   reaper,
   scourge,
   harbinger,
+  soulbeast,
+  druid
 }
