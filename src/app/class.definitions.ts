@@ -187,10 +187,8 @@ const berserker: Specialization = {
   name: 'Berserker',
   core: 'warrior',
   role: 'damage',
-  boons: {
-  },
-  misc: {
-  }
+  boons: {},
+  misc: {}
 }
 const spellbreakerSupport: Specialization = {
   code: 10,
@@ -450,30 +448,40 @@ const druid: Specialization = {
   boons: {},
   misc: {}
 }
-
-export const defs: {[k: string]: Specialization} = {
-  guardian,
-  dragonhunter,
-  firebrand,
-  willbender,
-  herald,
-  renegade,
-  powerVindicator,
-  berserker,
-  spellbreaker,
-  spellbreakerSupport,
-  scrapper,
-  mechanist,
-  daredevil,
+export const supportGroup: { [k: string]: Specialization } = {
+  firebrand, scrapper, tempest, spellbreakerSupport, druid, mechanist,
   specter,
-  tempest,
-  weaver,
-  catalyst,
-  chronomancer,
-  virtuoso,
+}
+export const meleeGroup: { [k: string]: Specialization } = {
   reaper,
+  berserker,
   scourge,
+  spellbreaker,
+  renegade,
+  daredevil,
+  willbender,
+}
+export const rangeGroup: { [k: string]: Specialization } = {
+  dragonhunter,
+  guardian,
+  powerVindicator,
+  weaver,
+  herald,
+  catalyst,
+
+  virtuoso,
   harbinger,
+}
+export const utilityGroup: { [k: string]: Specialization } = {
+  chronomancer,
   soulbeast,
-  druid
+
+}
+
+
+export const defs: { [k: string]: Specialization } = {
+  ...supportGroup,
+  ...meleeGroup,
+  ...rangeGroup,
+  ...utilityGroup,
 }

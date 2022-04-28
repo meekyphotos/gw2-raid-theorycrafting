@@ -1,9 +1,55 @@
-<div class="row">
-    <div class="col-md-12">
-        <ul class="flexbox">
-            <li *ngFor="let specialization of _allSpecializations, let i = index" class="block" draggable="true" (dragstart)="drag(specialization, 0, $event)" >
-                <app-spot [specialization]="specialization" [editable]="false"></app-spot>
-            </li>
-        </ul>
+<div class="wrap-collabsible">
+    <input id="sTier" class="toggle" type="checkbox" checked>
+    <label for="sTier" class="lbl-toggle">Support classes</label>
+    <div class="collapsible-content">
+        <div class="content-inner">
+            <ul class="flexbox">
+                <li *ngFor="let specialization of _sTier, let i = index" class="block" draggable="true" (dragstart)="drag(specialization, 0, $event)" >
+                    <app-spot [specialization]="specialization" [editable]="false"></app-spot>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="wrap-collabsible">
+    <input id="aTier" class="toggle" type="checkbox" checked>
+    <label for="aTier" class="lbl-toggle">Close range DD</label>
+    <div class="collapsible-content">
+        <div class="content-inner">
+            <ul class="flexbox">
+                <li *ngFor="let specialization of _aTier, let i = index" class="block" draggable="true" (dragstart)="drag(specialization, 0, $event)" >
+                    <app-spot [specialization]="specialization" [editable]="false"></app-spot>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="wrap-collabsible">
+    <input id="bTier" class="toggle" type="checkbox" checked>
+    <label for="bTier" class="lbl-toggle">Long range DD</label>
+    <div class="collapsible-content">
+        <div class="content-inner">
+            <ul class="flexbox">
+                <li *ngFor="let specialization of _bTier, let i = index" class="block" draggable="true" (dragstart)="drag(specialization, 0, $event)" >
+                    <app-spot [specialization]="specialization" [editable]="false"></app-spot>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="wrap-collabsible">
+    <input id="cTier" class="toggle" type="checkbox" checked>
+    <label for="cTier" class="lbl-toggle">Utility classes</label>
+    <div class="collapsible-content">
+        <div class="content-inner">
+            <ul class="flexbox">
+                <li *ngFor="let specialization of _cTier, let i = index" class="block" draggable="true" (dragstart)="drag(specialization, 0, $event)" >
+                    <app-spot [specialization]="specialization" [editable]="false"></app-spot>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

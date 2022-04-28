@@ -3,7 +3,7 @@
 @import 'tippy.js/dist/tippy.css';
 
 body {
-  background: #303030;
+  background: #36393F;
   color: #f5f5f5;
 }
 
@@ -310,8 +310,8 @@ $md-btn-primary-color: #00ACC1;
 }
 
 .tcode {
-  margin-top: 5px;
-
+  margin-top: 15px;
+  padding: 0 0.5rem 0 0;
   .button {
     background: $md-btn-color;
     color: #fff;
@@ -349,11 +349,13 @@ $md-btn-primary-color: #00ACC1;
   //flex-direction: column;
   flex-wrap: wrap;
   //
+  margin: 0;
+  padding: 0;
 
 
   li {
-    padding: .5rem;
-    margin: .5rem
+    padding: 0.25rem;
+    margin: 0.2604rem;
   }
 }
 
@@ -919,18 +921,29 @@ $md-btn-primary-color: #00ACC1;
   .hide-small {
     display: none !important;
   }
+  .wrapper {
+    padding: 1rem;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .hide-small {
     display: none !important;
   }
+  .wrapper {
+    padding: 1rem;
+  }
+
 }
 
 @media (min-width: 480px) and (max-width: 768px) {
   .hide-small {
     display: none !important;
   }
+  .wrapper {
+    padding: 1rem;
+  }
+
 
 }
 
@@ -938,5 +951,12 @@ $md-btn-primary-color: #00ACC1;
   .hide-small {
     display: none !important;
   }
+  .wrapper {
+    padding: 1rem;
+  }
 
+}
+
+h4 {
+  margin-top: 0;
 }
