@@ -191,7 +191,7 @@ const berserker: Specialization = {
   misc: {}
 }
 const spellbreakerSupport: Specialization = {
-  code: 10,
+  code: 26,
   img: 'spellbreaker',
   name: 'Spellbreaker (support)',
   core: 'warrior',
@@ -440,7 +440,7 @@ const soulbeast: Specialization = {
   misc: {}
 }
 const druid: Specialization = {
-  code: 23,
+  code: 24,
   img: 'druid',
   name: 'Druid',
   core: 'ranger',
@@ -448,9 +448,30 @@ const druid: Specialization = {
   boons: {},
   misc: {}
 }
+const supportVindicator: Specialization = {
+  code: 25,
+  img: 'vindicator',
+  name: 'Vindicator',
+  core: 'revenant',
+  role: 'support',
+  boons: {
+    resistance: 5,
+    stability: 2,
+    protection: 5,
+    regen: 5,
+    might: 2,
+    vigor: 5,
+  },
+  misc: {
+    blastFinisher: 2,
+    pull: 5,
+    barrier: 5,
+    breaks_stun: 2,
+  }
+}
 export const supportGroup: { [k: string]: Specialization } = {
   firebrand, scrapper, tempest, spellbreakerSupport, druid, mechanist,
-  specter,
+  specter, supportVindicator
 }
 export const meleeGroup: { [k: string]: Specialization } = {
   reaper,
