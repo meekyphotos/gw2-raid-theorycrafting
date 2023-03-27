@@ -73,8 +73,8 @@ body {
   cursor: pointer;
 
   padding: 0 0;
-  height: calc(50px * 1.3);
-  width: calc(80px * 1.3);
+  height: calc(50px * 1.5);
+  width: calc(100px * 1.5);
   border: solid 1px black;
   margin: -1px;
   background: linear-gradient(133deg, rgb(86 150 74) 0%, rgb(50 76 41) 100%);
@@ -133,8 +133,8 @@ body {
   }
 
   .slot {
-    height: calc(50px * 1.3);
-    width: calc(80px * 1.3);
+    height: calc(50px * 1.5);
+    width: calc(100px * 1.5);
     border: solid 1px black;
     margin: .25rem;
   }
@@ -146,6 +146,44 @@ body {
     &:hover {
       color: #FFF
     }
+    position: relative;
+    &-tr {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    &-tl {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &-br {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      text-align: right;
+    }
+    &-bl {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    .indicator {
+      margin: 0;
+      padding: 0;
+      font-size: 12px;
+      &.only-self img{
+        opacity: .75;
+        filter: grayscale(100%);
+      }
+      img {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
   }
 
   .slot-hover {

@@ -33,7 +33,8 @@ export interface Specialization {
     stealth?: number,
     superspeed?: number,
     cleanse?: number
-    blastFinisher?: number
+    blastFinisher?: number,
+    strip ?: number
   }
 }
 
@@ -49,7 +50,7 @@ const guardian: Specialization = {
   },
   misc: {
     knockdown: 1,
-    blastFinisher: 5
+    blastFinisher: 1
   }
 }
 const dragonhunter: Specialization = {
@@ -60,12 +61,12 @@ const dragonhunter: Specialization = {
   role: 'damage',
   boons: {
     aegis: 1,
-    resolution: 5
+    resolution: 5,
+    fury: -1,
   },
   misc: {
     knockdown: 1,
     pull: 1,
-    blastFinisher: 5
   }
 }
 const firebrand: Specialization = {
@@ -91,7 +92,7 @@ const firebrand: Specialization = {
     breaks_stun: 5,
     pull: 2,
     cleanse: 2,
-    blastFinisher: 5
+    blastFinisher: 1
   }
 }
 const willbender: Specialization = {
@@ -106,7 +107,6 @@ const willbender: Specialization = {
     resolution: 2
   },
   misc: {
-    blastFinisher: 5
   }
 }
 
@@ -128,7 +128,7 @@ const herald: Specialization = {
     superspeed: 2,
     knockdown: 2,
     launch: 2,
-    blastFinisher: 2
+    blastFinisher: 1
   }
 }
 const renegade: Specialization = {
@@ -136,48 +136,32 @@ const renegade: Specialization = {
   img: 'renegade',
   name: 'Renegade',
   core: 'revenant',
-  role: 'damage',
+  role: 'cc',
   boons: {
-    stability: 1,
-    alacrity: 3,
     resistance: 1,
-    resolution: 3
+    alacrity: 3,
+    stability: 1,
+    resolution: 3,
+    fury: 1,
   },
   misc: {
-    pull: 1
+    pull: 1,
+    strip: 1,
+    blastFinisher: 1,
   }
 }
-const vindicator: Specialization = {
-  code: 7,
-  img: 'vindicator',
-  name: 'Vindicator (Support)',
-  core: 'revenant',
-  role: 'support',
-  boons: {
-    regen: 5,
-    stability: 2,
-    vigor: 5,
-    resolution: 5
-  },
-  misc: {
-    healing: 5,
-    barrier: 5,
-    cleanse: 3,
-    launch: 1,
-    blastFinisher: 2
-  }
-}
+
 const powerVindicator: Specialization = {
   code: 8,
   img: 'vindicator',
-  name: 'Vindicator (Power)',
+  name: 'Vindicator',
   core: 'revenant',
   role: 'damage',
   boons: {
-    stability: 2,
+    stability: 1,
   },
   misc: {
-    blastFinisher: 2
+    blastFinisher: 1
   }
 }
 
@@ -187,17 +171,19 @@ const berserker: Specialization = {
   name: 'Berserker',
   core: 'warrior',
   role: 'damage',
-  boons: {},
+  boons: {
+    fury: -1
+  },
   misc: {}
 }
 const spellbreakerSupport: Specialization = {
   code: 26,
   img: 'spellbreaker',
-  name: 'Spellbreaker (support)',
+  name: 'Spellbreaker',
   core: 'warrior',
   role: 'cc',
   boons: {
-    fury: 3,
+    fury: 1,
     swiftness: 3
   },
   misc: {
@@ -205,26 +191,26 @@ const spellbreakerSupport: Specialization = {
     daze: 3,
     stun: 3,
     knockdown: 3,
-    knockback: 3
+    knockback: 3,
+    superspeed: 1,
+    strip: 1,
   }
 }
 
 const spellbreaker: Specialization = {
   code: 10,
   img: 'spellbreaker',
-  name: 'Spellbreaker (Power)',
+  name: 'Spellbreaker',
   core: 'warrior',
   role: 'cc',
-  boons: {
-    fury: 0,
-    swiftness: 0
-  },
+  boons: {},
   misc: {
-    barrier: 0,
     daze: 3,
     stun: 3,
     knockdown: 3,
-    knockback: 3
+    knockback: 3,
+    superspeed: 1,
+    strip: 1,
   }
 }
 
@@ -236,15 +222,10 @@ const scrapper: Specialization = {
   role: 'support',
   boons: {
     aegis: 3,
-    alacrity: 3,
-    fury: 3,
     might: 3,
     protection: 3,
-    quickness: 3,
     regen: 3,
-    resistance: 3,
     resolution: 3,
-    stability: 3,
     swiftness: 3,
     vigor: 3,
   },
@@ -254,7 +235,7 @@ const scrapper: Specialization = {
     healing: 5,
     stealth: 5,
     cleanse: 5,
-    blastFinisher: 5
+    blastFinisher: 1
   }
 }
 
@@ -264,20 +245,7 @@ const mechanist: Specialization = {
   name: 'Mechanist',
   core: 'engineer',
   role: 'support',
-  boons: {
-    aegis: 3,
-    alacrity: 3,
-    fury: 3,
-    might: 3,
-    protection: 3,
-    quickness: 3,
-    regen: 3,
-    resistance: 3,
-    resolution: 3,
-    stability: 3,
-    swiftness: 3,
-    vigor: 3,
-  },
+  boons: {},
   misc: {
     stun: 1,
     daze: 1,
@@ -285,7 +253,7 @@ const mechanist: Specialization = {
     barrier: 5,
     healing: 5,
     cleanse: 5,
-    blastFinisher: 5
+    blastFinisher: 1
   }
 }
 
@@ -301,28 +269,11 @@ const daredevil: Specialization = {
     vigor: 2
   },
   misc: {
-    daze: 1
-  }
-}
-const specter: Specialization = {
-  code: 14,
-  img: 'specter',
-  name: 'Specter',
-  core: 'thief',
-  role: 'support',
-  boons: {
-    fury: 1,
-    vigor: 1,
-    swiftness: 1
-  },
-  misc: {
     daze: 1,
-    healing: 3,
-    barrier: 3,
-    stealth: 5,
-    pull: 3
+    stealth: 1
   }
 }
+
 const tempest: Specialization = {
   code: 15,
   img: 'tempest',
@@ -331,6 +282,7 @@ const tempest: Specialization = {
   role: 'support',
   boons: {
     protection: 4,
+    alacrity: 1,
     might: 3,
     regen: 5,
     vigor: 5
@@ -338,7 +290,8 @@ const tempest: Specialization = {
   misc: {
     healing: 5,
     cleanse: 5,
-    blastFinisher: 5
+    blastFinisher: 2,
+    superspeed: 1,
   }
 }
 const weaver: Specialization = {
@@ -347,10 +300,13 @@ const weaver: Specialization = {
   name: 'Weaver',
   core: 'elementalist',
   role: 'damage',
-  boons: {},
+  boons: {
+    fury: -1,
+  },
   misc: {
     stun: 3,
-    knockback: 2
+    knockback: 2,
+    blastFinisher: 2
   }
 }
 const catalyst: Specialization = {
@@ -359,10 +315,13 @@ const catalyst: Specialization = {
   name: 'Catalyst',
   core: 'elementalist',
   role: 'damage',
-  boons: {},
+  boons: {
+    fury: -1,
+  },
   misc: {
     stun: 3,
-    knockback: 2
+    knockback: 2,
+    blastFinisher: 2,
   }
 }
 
@@ -373,13 +332,16 @@ const chronomancer: Specialization = {
   core: 'mesmer',
   role: 'cc',
   boons: {
-    stability: 2
+    stability: 2,
+    alacrity: 1,
   },
   misc: {
     daze: 5,
     float: 5,
     knockdown: 5,
-    pull: 5
+    pull: 5,
+    stealth: 1,
+    strip: 1,
   }
 }
 
@@ -405,7 +367,8 @@ const reaper: Specialization = {
   role: 'damage',
   boons: {},
   misc: {
-    stun: 2
+    stun: 2,
+    strip: 1,
   }
 }
 const scourge: Specialization = {
@@ -418,18 +381,11 @@ const scourge: Specialization = {
     stability: 1
   },
   misc: {
-    barrier: 3
+    barrier: 3,
+    strip: 1,
   }
 }
-const harbinger: Specialization = {
-  code: 22,
-  img: 'harbinger',
-  name: 'Harbinger',
-  core: 'necromancer',
-  role: 'damage',
-  boons: {},
-  misc: {}
-}
+
 const soulbeast: Specialization = {
   code: 23,
   img: 'soulbeast',
@@ -445,8 +401,14 @@ const druid: Specialization = {
   name: 'Druid',
   core: 'ranger',
   role: 'support',
-  boons: {},
-  misc: {}
+  boons: {
+    stability: 1,
+    fury: 1
+  },
+  misc: {
+    stealth: 1,
+    blastFinisher: 2,
+  }
 }
 const supportVindicator: Specialization = {
   code: 25,
@@ -458,6 +420,7 @@ const supportVindicator: Specialization = {
     resistance: 5,
     stability: 2,
     protection: 5,
+    fury: 1,
     regen: 5,
     might: 2,
     vigor: 5,
@@ -471,14 +434,14 @@ const supportVindicator: Specialization = {
 }
 export const supportGroup: { [k: string]: Specialization } = {
   firebrand, scrapper, tempest, spellbreakerSupport, druid, mechanist,
-  specter, supportVindicator
+  supportVindicator
 }
 export const meleeGroup: { [k: string]: Specialization } = {
   reaper,
   berserker,
   scourge,
   spellbreaker,
-  renegade,
+
   daredevil,
   willbender,
 }
@@ -491,11 +454,11 @@ export const rangeGroup: { [k: string]: Specialization } = {
   catalyst,
 
   virtuoso,
-  harbinger,
 }
 export const utilityGroup: { [k: string]: Specialization } = {
   chronomancer,
   soulbeast,
+  renegade,
 
 }
 

@@ -2,6 +2,48 @@
     <img [src]="image"/>
     <div *ngIf="!editable">{{name}}</div>
     <div *ngIf="editable">
+      <div class="spot-tl">
+        <div class="indicator" *ngIf="(specialization?.boons?.alacrity ?? 0) > 0">
+          <img src="assets/status/Alacrity.png" alt="alacrity"/>
+        </div>
+        <div class="indicator" *ngIf="(specialization?.boons?.fury ?? 0) > 0">
+          <img src="assets/status/Fury.png" alt="fury"/>
+        </div>
+        <div class="indicator only-self" *ngIf="(specialization?.boons?.fury ?? 0) < 0">
+          <img src="assets/status/Fury.png" alt="fury"/>
+        </div>
+
+        <div class="indicator" *ngIf="(specialization?.boons?.quickness ?? 0) > 0">
+          <img src="assets/status/Quickness.png" alt="quickness"/>
+        </div>
+        <div class="indicator" *ngIf="(specialization?.boons?.resistance ?? 0) > 0">
+          <img src="assets/status/Resistance.png" alt="resistance"/>
+        </div>
+
+      </div>
+      <div class="spot-tr" ></div>
+      <div class="spot-bl">
+        <div class="indicator" >
+          <img src="assets/controls/Power_attribute.png" alt="dps" *ngIf="specialization?.role === 'damage'"/>
+          <img src="assets/controls/daze.png" alt="support" *ngIf="specialization?.role === 'cc'">
+          <img src="assets/controls/Vitality_attribute.png" alt="healers" *ngIf="specialization?.role === 'support'">
+        </div>
+      </div>
+      <div class="spot-br">
+        <div class="indicator" *ngIf="(specialization?.misc?.stealth ?? 0) > 0">
+          <img src="assets/controls/stealth.png" alt="stealth">
+        </div>
+        <div class="indicator" *ngIf="(specialization?.misc?.superspeed ?? 0) > 0">
+          <img src="assets/controls/superspeed.png" alt="superspeed">
+        </div>
+        <div class="indicator" *ngIf="(specialization?.misc?.strip ?? 0) > 0">
+          <img src="assets/controls/Banish_Enchantment.png" alt="strip">
+        </div>
+        <div class="indicator" *ngIf="(specialization?.misc?.blastFinisher ?? 0) > 0">
+          {{specialization?.misc?.blastFinisher}}
+          <img src="assets/controls/blastFinisher.png" alt="blastFinisher">
+        </div>
+      </div>
         <editable (save)="update()" (cancel)="cancel()">
             <ng-template viewMode>{{ name }}</ng-template>
 
