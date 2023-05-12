@@ -104,7 +104,8 @@ const willbender: Specialization = {
   boons: {
     aegis: 1,
     stability: 2,
-    resolution: 2
+    resolution: 2,
+    alacrity: 1,
   },
   misc: {
   }
@@ -159,6 +160,7 @@ const powerVindicator: Specialization = {
   role: 'damage',
   boons: {
     stability: 1,
+    fury: 5,
   },
   misc: {
     blastFinisher: 1
@@ -316,7 +318,10 @@ const catalyst: Specialization = {
   core: 'elementalist',
   role: 'damage',
   boons: {
-    fury: -1,
+    fury: 1,
+    resistance: 1,
+    protection: 1,
+    quickness: 1
   },
   misc: {
     stun: 3,
@@ -402,8 +407,7 @@ const druid: Specialization = {
   core: 'ranger',
   role: 'support',
   boons: {
-    stability: 1,
-    fury: 1
+    stability: 1
   },
   misc: {
     stealth: 1,
@@ -420,7 +424,6 @@ const supportVindicator: Specialization = {
     resistance: 5,
     stability: 2,
     protection: 5,
-    fury: 1,
     regen: 5,
     might: 2,
     vigor: 5,
