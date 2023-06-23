@@ -8,9 +8,12 @@
         <div>
             <p>{{descriptionOf()}}</p>
             <p><strong>Status</strong>:
-                <ng-container *ngIf="modifier == 'no'">Missing</ng-container>
-                <ng-container *ngIf="modifier == 'weak'">Partially available</ng-container>
-                <ng-container *ngIf="modifier == 'ok'">Available</ng-container>
+                <ng-container *ngIf="modifier == 'q0'">Missing</ng-container>
+                <ng-container *ngIf="modifier == 'q1'">Barely available</ng-container>
+                <ng-container *ngIf="modifier == 'q2'">Barely available</ng-container>
+                <ng-container *ngIf="modifier == 'q3'">Partially available</ng-container>
+                <ng-container *ngIf="modifier == 'q4'">Inconsistently available</ng-container>
+                <ng-container *ngIf="modifier == 'q5'">Available</ng-container>
             </p>
         </div>
     </div>

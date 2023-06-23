@@ -1,5 +1,14 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {Specialization} from "../../class.definitions";
+import {BoonQuality, Specialization} from "../../class.definitions";
+
+function getValue(quality ?: BoonQuality): number {
+  if (quality) {
+    if(quality > 0){
+      return quality
+    }
+  }
+  return 0
+}
 
 @Component({
              selector: 'app-boon-table',
@@ -9,18 +18,18 @@ import {Specialization} from "../../class.definitions";
 export class BoonTableComponent implements OnInit, OnChanges {
   @Input() party: Array<Specialization | null> = [];
   @Input() index = 0;
-  aegis: string = 'no';
-  alacrity: string = 'no';
-  fury: string = 'no';
-  might: string = 'no';
-  protection: string = 'no';
-  quickness: string = 'no';
-  regen: string = 'no';
-  resistance: string = 'no';
-  resolution: string = 'no';
-  stability: string = 'no';
-  swiftness: string = 'no';
-  vigor: string = 'no';
+  aegis: string = 'q0';
+  alacrity: string = 'q0';
+  fury: string = 'q0';
+  might: string = 'q0';
+  protection: string = 'q0';
+  quickness: string = 'q0';
+  regen: string = 'q0';
+  resistance: string = 'q0';
+  resolution: string = 'q0';
+  stability: string = 'q0';
+  swiftness: string = 'q0';
+  vigor: string = 'q0';
 
   constructor() {
   }
@@ -45,18 +54,18 @@ export class BoonTableComponent implements OnInit, OnChanges {
     for (const partyElement of this.party) {
       if (partyElement) {
         const classDef = partyElement.boons
-        aegisValue += classDef.aegis || 0
-        alacrityValue += classDef.alacrity || 0
-        furyValue += classDef.fury || 0
-        mightValue += classDef.might || 0
-        protectionValue += classDef.protection || 0
-        quicknessValue += classDef.quickness || 0
-        regenValue += classDef.regen || 0
-        resistanceValue += classDef.resistance || 0
-        resolutionValue += classDef.resolution || 0
-        stabilityValue += classDef.stability || 0
-        swiftnessValue += classDef.swiftness || 0
-        vigorValue += classDef.vigor || 0
+        aegisValue += getValue(classDef.aegis)
+        alacrityValue += getValue(classDef.alacrity)
+        furyValue += getValue(classDef.fury)
+        mightValue += getValue(classDef.might)
+        protectionValue += getValue(classDef.protection)
+        quicknessValue += getValue(classDef.quickness)
+        regenValue += getValue(classDef.regen)
+        resistanceValue += getValue(classDef.resistance)
+        resolutionValue += getValue(classDef.resolution)
+        stabilityValue += getValue(classDef.stability)
+        swiftnessValue += getValue(classDef.swiftness)
+        vigorValue += getValue(classDef.vigor)
       }
     }
 
@@ -79,15 +88,10 @@ export class BoonTableComponent implements OnInit, OnChanges {
   }
 
   toStringValue(name: number): string {
-    if (name == 0) {
-      return 'no'
-    } else {
-      if (name > 3) {
-        return 'ok'
-      } else {
-        return 'weak'
-      }
+    if(name < 5) {
+      return `q${name}`
     }
+    return "q5"
   }
 
 }

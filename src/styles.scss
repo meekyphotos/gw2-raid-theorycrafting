@@ -405,17 +405,65 @@ $md-btn-primary-color: #00ACC1;
     width: 32px;
     height: 32px;
   }
-  &-off img {
+  &-q0 img {
     filter: saturate(0);
+    opacity: 0.3;
+  }
+  &-q1 img{
+    filter: saturate(0.2);
+    opacity: 0.4;
+  }
+  &-q2 img{
+    filter: saturate(0.3);
     opacity: 0.5;
   }
-  &-weak img {
-    filter: saturate(1);
-    opacity: .7;
+  &-q3 img{
+    filter: saturate(0.5);
+    opacity: 0.7;
   }
-  &-strong img {
+  &-q4 img{
+    filter: saturate(0.7);
+    opacity: 0.75;
+  }
+  &-q5 img{
     filter: saturate(1);
     opacity: 1;
+  }
+
+  .progress {
+    background: black;
+    position: relative;
+    height: 4px;
+    width: 100%;
+    &-q1 {
+      width: 20%;
+      background: #F44336;
+    }
+    &-q2 {
+      width: 40%;
+      background: #CA5E3D;
+    }
+
+    &-q3 {
+      width: 60%;
+      background: #A07943;
+    }
+    &-q4 {
+      width: 80%;
+      background: #76944A;
+    }
+
+    &-q5 {
+      width: 100%;
+      background: #4CAF50;
+    }
+    .progress-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+
+    }
   }
 
   .counter {

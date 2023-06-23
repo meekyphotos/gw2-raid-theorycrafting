@@ -1,88 +1,88 @@
 <div class="summary-boons">
     <h6>Boons</h6>
-    <div class="indicator"
-         [class.indicator-off]="aegis == 'no'"
-         [class.indicator-weak]="aegis == 'weak'"
-         [class.indicator-strong]="aegis == 'ok'"
+    <div [class]="'indicator indicator-' + aegis"
          [ngxTippy]="aegisSkillFact" [tippyName]="'aegis-' + index">
         <img src="assets/status/Aegis.png" alt="aegis"/>
+        <div class="progress">
+            <div [class]="'progress-bar progress-' + aegis"></div>
+        </div>
     </div>
-    <div class="indicator"
-         [class.indicator-off]="alacrity == 'no'"
-         [class.indicator-weak]="alacrity == 'weak'"
-         [class.indicator-strong]="alacrity == 'ok'"
+    <div [class]="'indicator indicator-' + alacrity"
          [ngxTippy]="alacritySkillFact" [tippyName]="'alacrity-' + index">
         <img src="assets/status/Alacrity.png" alt="alacrity"/>
+        <div class="progress">
+            <div [class]="'progress-bar progress-' + alacrity"></div>
+        </div>
     </div>
-    <div class="indicator"
-         [class.indicator-off]="fury == 'no'"
-         [class.indicator-weak]="fury == 'weak'"
-         [class.indicator-strong]="fury == 'ok'"
+    <div [class]="'indicator indicator-' + fury"
          [ngxTippy]="furySkillFact" [tippyName]="'fury-' + index">
         <img src="assets/status/Fury.png" alt="fury"/>
+        <div class="progress">
+            <div [class]="'progress-bar progress-' + fury"></div>
+        </div>
     </div>
-    <div class="indicator"
-         [class.indicator-off]="might == 'no'"
-         [class.indicator-weak]="might == 'weak'"
-         [class.indicator-strong]="might == 'ok'"
+    <div [class]="'indicator indicator-' + might"
          [ngxTippy]="mightSkillFact" [tippyName]="'might-' + index">
         <img src="assets/status/Might.png" alt="might"/>
+        <div class="progress">
+            <div [class]="'progress-bar progress-' + might"></div>
+        </div>
     </div>
-    <div class="indicator"
-         [class.indicator-off]="protection == 'no'"
-         [class.indicator-weak]="protection == 'weak'"
-         [class.indicator-strong]="protection == 'ok'"
+    <div [class]="'indicator indicator-' + protection"
          [ngxTippy]="protectionSkillFact" [tippyName]="'protection-' + index">
         <img src="assets/status/Protection.png" alt="protection"/>
+        <div class="progress">
+            <div [class]="'progress-bar progress-' + protection"></div>
+        </div>
     </div>
-    <div class="indicator"
-         [class.indicator-off]="quickness == 'no'"
-         [class.indicator-weak]="quickness == 'weak'"
-         [class.indicator-strong]="quickness == 'ok'"
+    <div [class]="'indicator indicator-' + quickness"
          [ngxTippy]="quicknessSkillFact" [tippyName]="'quickness-' + index">
         <img src="assets/status/Quickness.png" alt="quickness"/>
+        <div class="progress">
+            <div [class]="'progress-bar progress-' + quickness"></div>
+        </div>
     </div>
-    <div class="indicator"
-         [class.indicator-off]="regen == 'no'"
-         [class.indicator-weak]="regen == 'weak'"
-         [class.indicator-strong]="regen == 'ok'"
+    <div [class]="'indicator indicator-' + regen"
          [ngxTippy]="regenSkillFact" [tippyName]="'regen-' + index">
         <img src="assets/status/Regeneration.png" alt="regen"/>
+        <div class="progress">
+            <div [class]="'progress-bar progress-' + regen"></div>
+        </div>
     </div>
-    <div class="indicator"
-         [class.indicator-off]="resistance == 'no'"
-         [class.indicator-weak]="resistance == 'weak'"
-         [class.indicator-strong]="resistance == 'ok'"
+    <div [class]="'indicator indicator-' + resistance"
          [ngxTippy]="resistanceSkillFact" [tippyName]="'resistance-' + index">
         <img src="assets/status/Resistance.png" alt="resistance"/>
+        <div class="progress">
+            <div [class]="'progress-bar progress-' + resistance"></div>
+        </div>
     </div>
-    <div class="indicator"
-         [class.indicator-off]="resolution == 'no'"
-         [class.indicator-weak]="resolution == 'weak'"
-         [class.indicator-strong]="resolution == 'ok'"
+    <div [class]="'indicator indicator-' + resolution"
          [ngxTippy]="resolutionSkillFact" [tippyName]="'resolution-' + index">
         <img src="assets/status/Resolution.png" alt="resolution"/>
+        <div class="progress">
+            <div [class]="'progress-bar progress-' + resolution"></div>
+        </div>
     </div>
-    <div class="indicator"
-         [class.indicator-off]="stability == 'no'"
-         [class.indicator-weak]="stability == 'weak'"
-         [class.indicator-strong]="stability == 'ok'"
+    <div [class]="'indicator indicator-' + stability"
          [ngxTippy]="stabilitySkillFact" [tippyName]="'stability-' + index">
         <img src="assets/status/Stability.png" alt="stability"/>
+        <div class="progress">
+            <div [class]="'progress-bar progress-' + stability"></div>
+        </div>
     </div>
-    <div class="indicator"
-         [class.indicator-off]="swiftness == 'no'"
-         [class.indicator-weak]="swiftness == 'weak'"
-         [class.indicator-strong]="swiftness == 'ok'"
+    <div [class]="'indicator indicator-' + swiftness"
          [ngxTippy]="swiftnessSkillFact" [tippyName]="'swiftness-' + index">
         <img src="assets/status/Swiftness.png" alt="swiftness"/>
+        <div class="progress">
+            <div [class]="'progress-bar progress-' + swiftness"></div>
+        </div>
     </div>
-    <div class="indicator"
-         [class.indicator-off]="vigor == 'no'"
-         [class.indicator-weak]="vigor == 'weak'"
-         [class.indicator-strong]="vigor == 'ok'"
+    <div [class]="'indicator indicator-' + vigor"
          [ngxTippy]="vigorSkillFact" [tippyName]="'vigor-' + index">
         <img src="assets/status/Vigor.png" alt="vigor"/>
+        <div class="progress">
+            <div [class]="'progress-bar progress-' + vigor"></div>
+        </div>
     </div>
 </div>
 

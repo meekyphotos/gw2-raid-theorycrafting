@@ -5,18 +5,18 @@ export interface Specialization {
   core: string,
   role: 'damage' | 'support' | 'cc',
   boons: {
-    aegis?: number
-    alacrity?: number
-    fury?: number
-    might?: number
-    protection?: number
-    quickness?: number
-    regen?: number
-    resistance?: number
-    resolution?: number
-    stability?: number
-    swiftness?: number
-    vigor?: number
+    aegis?: BoonQuality
+    alacrity?: BoonQuality
+    fury?: BoonQuality
+    might?: BoonQuality
+    protection?: BoonQuality
+    quickness?: BoonQuality
+    regen?: BoonQuality
+    resistance?: BoonQuality
+    resolution?: BoonQuality
+    stability?: BoonQuality
+    swiftness?: BoonQuality
+    vigor?: BoonQuality
   },
   misc: {
     daze?: number,
@@ -38,6 +38,16 @@ export interface Specialization {
   }
 }
 
+export enum BoonQuality {
+  SELF_ONLY = -1,
+  NONE = 0,
+  LOW = 1,
+  BELOW_AVERAGE = 2,
+  AVERAGE = 3,
+  ABOVE_AVERAGE = 4,
+  EXCELLENT = 5
+}
+
 const guardian: Specialization = {
   code: 1,
   img: 'guardian',
@@ -45,8 +55,18 @@ const guardian: Specialization = {
   core: 'guardian',
   role: 'damage',
   boons: {
-    aegis: 1,
-    resolution: 5
+    aegis: BoonQuality.LOW,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.NONE,
+    might: BoonQuality.SELF_ONLY,
+    protection: BoonQuality.LOW,
+    quickness: BoonQuality.NONE,
+    regen: BoonQuality.LOW,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.ABOVE_AVERAGE,
+    stability: BoonQuality.LOW,
+    swiftness: BoonQuality.AVERAGE,
+    vigor: BoonQuality.NONE,
   },
   misc: {
     knockdown: 1,
@@ -60,9 +80,18 @@ const dragonhunter: Specialization = {
   core: 'guardian',
   role: 'damage',
   boons: {
-    aegis: 1,
-    resolution: 5,
-    fury: -1,
+    aegis: BoonQuality.LOW,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.SELF_ONLY,
+    might: BoonQuality.SELF_ONLY,
+    protection: BoonQuality.SELF_ONLY,
+    quickness: BoonQuality.NONE,
+    regen: BoonQuality.NONE,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.LOW,
+    stability: BoonQuality.SELF_ONLY,
+    swiftness: BoonQuality.AVERAGE,
+    vigor: BoonQuality.NONE,
   },
   misc: {
     knockdown: 1,
@@ -76,16 +105,18 @@ const firebrand: Specialization = {
   core: 'guardian',
   role: 'support',
   boons: {
-    aegis: 3,
-    might: 3,
-    protection: 5,
-    quickness: 5,
-    regen: 5,
-    resistance: 5,
-    resolution: 5,
-    stability: 5,
-    swiftness: 5,
-    vigor: 3
+    aegis: BoonQuality.ABOVE_AVERAGE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.NONE,
+    might: BoonQuality.BELOW_AVERAGE,
+    protection: BoonQuality.ABOVE_AVERAGE,
+    quickness: BoonQuality.BELOW_AVERAGE,
+    regen: BoonQuality.AVERAGE,
+    resistance: BoonQuality.AVERAGE,
+    resolution: BoonQuality.ABOVE_AVERAGE,
+    stability: BoonQuality.EXCELLENT,
+    swiftness: BoonQuality.ABOVE_AVERAGE,
+    vigor: BoonQuality.SELF_ONLY,
   },
   misc: {
     healing: 2,
@@ -102,10 +133,41 @@ const willbender: Specialization = {
   core: 'guardian',
   role: 'damage',
   boons: {
-    aegis: 1,
-    stability: 2,
-    resolution: 2,
-    alacrity: 1,
+    aegis: BoonQuality.SELF_ONLY,
+    alacrity: BoonQuality.EXCELLENT,
+    fury: BoonQuality.NONE,
+    might: BoonQuality.SELF_ONLY,
+    protection: BoonQuality.NONE,
+    quickness: BoonQuality.NONE,
+    regen: BoonQuality.NONE,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.SELF_ONLY,
+    swiftness: BoonQuality.SELF_ONLY,
+    vigor: BoonQuality.NONE,
+  },
+  misc: {
+  }
+}
+const supportAlacbender: Specialization = {
+  code: 30,
+  img: 'willbender',
+  name: 'Willbender',
+  core: 'guardian',
+  role: 'support',
+  boons: {
+    aegis: BoonQuality.ABOVE_AVERAGE,
+    alacrity: BoonQuality.EXCELLENT,
+    fury: BoonQuality.SELF_ONLY,
+    might: BoonQuality.ABOVE_AVERAGE,
+    protection: BoonQuality.ABOVE_AVERAGE,
+    quickness: BoonQuality.NONE,
+    regen: BoonQuality.ABOVE_AVERAGE,
+    resistance: BoonQuality.SELF_ONLY,
+    resolution: BoonQuality.ABOVE_AVERAGE,
+    stability: BoonQuality.SELF_ONLY,
+    swiftness: BoonQuality.AVERAGE,
+    vigor: BoonQuality.SELF_ONLY,
   },
   misc: {
   }
@@ -118,12 +180,18 @@ const herald: Specialization = {
   core: 'revenant',
   role: 'damage',
   boons: {
-    fury: 5,
-    might: 3,
-    protection: 3,
-    regen: 3,
-    swiftness: 5,
-    stability: 2
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.ABOVE_AVERAGE,
+    might: BoonQuality.ABOVE_AVERAGE,
+    protection: BoonQuality.AVERAGE,
+    quickness: BoonQuality.NONE,
+    regen: BoonQuality.NONE,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.LOW,
+    swiftness: BoonQuality.EXCELLENT,
+    vigor: BoonQuality.NONE,
   },
   misc: {
     superspeed: 2,
@@ -139,11 +207,18 @@ const renegade: Specialization = {
   core: 'revenant',
   role: 'cc',
   boons: {
-    resistance: 1,
-    alacrity: 3,
-    stability: 1,
-    resolution: 3,
-    fury: 1,
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.EXCELLENT,
+    fury: BoonQuality.SELF_ONLY,
+    might: BoonQuality.AVERAGE,
+    protection: BoonQuality.LOW,
+    quickness: BoonQuality.SELF_ONLY,
+    regen: BoonQuality.LOW,
+    resistance: BoonQuality.LOW,
+    resolution: BoonQuality.SELF_ONLY,
+    stability: BoonQuality.LOW,
+    swiftness: BoonQuality.NONE,
+    vigor: BoonQuality.SELF_ONLY,
   },
   misc: {
     pull: 1,
@@ -159,8 +234,18 @@ const powerVindicator: Specialization = {
   core: 'revenant',
   role: 'damage',
   boons: {
-    stability: 1,
-    fury: 5,
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.ABOVE_AVERAGE,
+    might: BoonQuality.LOW,
+    protection: BoonQuality.NONE,
+    quickness: BoonQuality.NONE,
+    regen: BoonQuality.SELF_ONLY,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.SELF_ONLY,
+    stability: BoonQuality.LOW,
+    swiftness: BoonQuality.NONE,
+    vigor: BoonQuality.SELF_ONLY,
   },
   misc: {
     blastFinisher: 1
@@ -174,19 +259,40 @@ const berserker: Specialization = {
   core: 'warrior',
   role: 'damage',
   boons: {
-    fury: -1
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.SELF_ONLY,
+    might: BoonQuality.SELF_ONLY,
+    protection: BoonQuality.NONE,
+    quickness: BoonQuality.SELF_ONLY,
+    regen: BoonQuality.NONE,
+    resistance: BoonQuality.SELF_ONLY,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.NONE,
+    swiftness: BoonQuality.SELF_ONLY,
+    vigor: BoonQuality.SELF_ONLY,
   },
   misc: {}
 }
 const spellbreakerSupport: Specialization = {
   code: 26,
   img: 'spellbreaker',
-  name: 'Spellbreaker',
+  name: 'Spellbreaker (cele)',
   core: 'warrior',
   role: 'cc',
   boons: {
-    fury: 1,
-    swiftness: 3
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.NONE,
+    might: BoonQuality.AVERAGE,
+    protection: BoonQuality.SELF_ONLY,
+    quickness: BoonQuality.BELOW_AVERAGE,
+    regen: BoonQuality.SELF_ONLY,
+    resistance: BoonQuality.LOW,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.LOW,
+    swiftness: BoonQuality.LOW,
+    vigor: BoonQuality.LOW,
   },
   misc: {
     barrier: 2,
@@ -205,7 +311,20 @@ const spellbreaker: Specialization = {
   name: 'Spellbreaker',
   core: 'warrior',
   role: 'cc',
-  boons: {},
+  boons: {
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.SELF_ONLY,
+    might: BoonQuality.SELF_ONLY,
+    protection: BoonQuality.NONE,
+    quickness: BoonQuality.NONE,
+    regen: BoonQuality.NONE,
+    resistance: BoonQuality.LOW,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.SELF_ONLY,
+    swiftness: BoonQuality.SELF_ONLY,
+    vigor: BoonQuality.NONE,
+  },
   misc: {
     daze: 3,
     stun: 3,
@@ -223,37 +342,24 @@ const scrapper: Specialization = {
   core: 'engineer',
   role: 'support',
   boons: {
-    aegis: 3,
-    might: 3,
-    protection: 3,
-    regen: 3,
-    resolution: 3,
-    swiftness: 3,
-    vigor: 3,
+    aegis: BoonQuality.LOW,
+    alacrity: BoonQuality.LOW,
+    fury: BoonQuality.LOW,
+    might: BoonQuality.LOW,
+    protection: BoonQuality.LOW,
+    quickness: BoonQuality.BELOW_AVERAGE,
+    regen: BoonQuality.ABOVE_AVERAGE,
+    resistance: BoonQuality.LOW,
+    resolution: BoonQuality.LOW,
+    stability: BoonQuality.BELOW_AVERAGE,
+    swiftness: BoonQuality.LOW,
+    vigor: BoonQuality.LOW,
   },
   misc: {
     stun: 1,
     superspeed: 5,
     healing: 5,
     stealth: 5,
-    cleanse: 5,
-    blastFinisher: 1
-  }
-}
-
-const mechanist: Specialization = {
-  code: 12,
-  img: 'mechanist',
-  name: 'Mechanist',
-  core: 'engineer',
-  role: 'support',
-  boons: {},
-  misc: {
-    stun: 1,
-    daze: 1,
-    knockback: 1,
-    barrier: 5,
-    healing: 5,
     cleanse: 5,
     blastFinisher: 1
   }
@@ -266,9 +372,18 @@ const daredevil: Specialization = {
   core: 'thief',
   role: 'damage',
   boons: {
-    fury: 2,
-    swiftness: 2,
-    vigor: 2
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.AVERAGE,
+    might: BoonQuality.LOW,
+    protection: BoonQuality.NONE,
+    quickness: BoonQuality.NONE,
+    regen: BoonQuality.NONE,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.NONE,
+    swiftness: BoonQuality.LOW,
+    vigor: BoonQuality.LOW,
   },
   misc: {
     daze: 1,
@@ -283,11 +398,18 @@ const tempest: Specialization = {
   core: 'elementalist',
   role: 'support',
   boons: {
-    protection: 4,
-    alacrity: 1,
-    might: 3,
-    regen: 5,
-    vigor: 5
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.AVERAGE,
+    fury: BoonQuality.BELOW_AVERAGE,
+    might: BoonQuality.LOW,
+    protection: BoonQuality.AVERAGE,
+    quickness: BoonQuality.NONE,
+    regen: BoonQuality.EXCELLENT,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.SELF_ONLY,
+    swiftness: BoonQuality.SELF_ONLY,
+    vigor: BoonQuality.AVERAGE,
   },
   misc: {
     healing: 5,
@@ -303,7 +425,18 @@ const weaver: Specialization = {
   core: 'elementalist',
   role: 'damage',
   boons: {
-    fury: -1,
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.SELF_ONLY,
+    might: BoonQuality.NONE,
+    protection: BoonQuality.NONE,
+    quickness: BoonQuality.NONE,
+    regen: BoonQuality.NONE,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.SELF_ONLY,
+    swiftness: BoonQuality.NONE,
+    vigor: BoonQuality.NONE,
   },
   misc: {
     stun: 3,
@@ -318,10 +451,18 @@ const catalyst: Specialization = {
   core: 'elementalist',
   role: 'damage',
   boons: {
-    fury: 1,
-    resistance: 1,
-    protection: 1,
-    quickness: 1
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.SELF_ONLY,
+    might: BoonQuality.NONE,
+    protection: BoonQuality.SELF_ONLY,
+    quickness: BoonQuality.SELF_ONLY,
+    regen: BoonQuality.NONE,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.SELF_ONLY,
+    stability: BoonQuality.SELF_ONLY,
+    swiftness: BoonQuality.SELF_ONLY,
+    vigor: BoonQuality.NONE,
   },
   misc: {
     stun: 3,
@@ -337,8 +478,18 @@ const chronomancer: Specialization = {
   core: 'mesmer',
   role: 'cc',
   boons: {
-    stability: 2,
-    alacrity: 1,
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.ABOVE_AVERAGE,
+    fury: BoonQuality.NONE,
+    might: BoonQuality.LOW,
+    protection: BoonQuality.NONE,
+    quickness: BoonQuality.NONE,
+    regen: BoonQuality.NONE,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.NONE,
+    swiftness: BoonQuality.NONE,
+    vigor: BoonQuality.NONE,
   },
   misc: {
     daze: 5,
@@ -356,7 +507,20 @@ const virtuoso: Specialization = {
   name: 'Virtuoso',
   core: 'mesmer',
   role: 'damage',
-  boons: {},
+  boons: {
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.NONE,
+    might: BoonQuality.NONE,
+    protection: BoonQuality.NONE,
+    quickness: BoonQuality.NONE,
+    regen: BoonQuality.NONE,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.NONE,
+    swiftness: BoonQuality.NONE,
+    vigor: BoonQuality.NONE,
+  },
   misc: {
     daze: 1,
     knockback: 2,
@@ -370,7 +534,20 @@ const reaper: Specialization = {
   name: 'Reaper',
   core: 'necromancer',
   role: 'damage',
-  boons: {},
+  boons: {
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.NONE,
+    might: BoonQuality.SELF_ONLY,
+    protection: BoonQuality.NONE,
+    quickness: BoonQuality.SELF_ONLY,
+    regen: BoonQuality.SELF_ONLY,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.SELF_ONLY,
+    stability: BoonQuality.SELF_ONLY,
+    swiftness: BoonQuality.NONE,
+    vigor: BoonQuality.NONE,
+  },
   misc: {
     stun: 2,
     strip: 1,
@@ -383,7 +560,18 @@ const scourge: Specialization = {
   core: 'necromancer',
   role: 'damage',
   boons: {
-    stability: 1
+    aegis: BoonQuality.SELF_ONLY,
+    alacrity: BoonQuality.SELF_ONLY,
+    fury: BoonQuality.SELF_ONLY,
+    might: BoonQuality.SELF_ONLY,
+    protection: BoonQuality.SELF_ONLY,
+    quickness: BoonQuality.SELF_ONLY,
+    regen: BoonQuality.SELF_ONLY,
+    resistance: BoonQuality.SELF_ONLY,
+    resolution: BoonQuality.SELF_ONLY,
+    stability: BoonQuality.SELF_ONLY,
+    swiftness: BoonQuality.SELF_ONLY,
+    vigor: BoonQuality.SELF_ONLY,
   },
   misc: {
     barrier: 3,
@@ -397,7 +585,20 @@ const soulbeast: Specialization = {
   name: 'Soulbeast',
   core: 'ranger',
   role: 'damage',
-  boons: {},
+  boons: {
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.AVERAGE,
+    might: BoonQuality.NONE,
+    protection: BoonQuality.NONE,
+    quickness: BoonQuality.SELF_ONLY,
+    regen: BoonQuality.NONE,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.SELF_ONLY,
+    swiftness: BoonQuality.SELF_ONLY,
+    vigor: BoonQuality.NONE,
+  },
   misc: {}
 }
 const druid: Specialization = {
@@ -407,7 +608,18 @@ const druid: Specialization = {
   core: 'ranger',
   role: 'support',
   boons: {
-    stability: 1
+    aegis: BoonQuality.LOW,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.BELOW_AVERAGE,
+    might: BoonQuality.LOW,
+    protection: BoonQuality.NONE,
+    quickness: BoonQuality.SELF_ONLY,
+    regen: BoonQuality.ABOVE_AVERAGE,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.LOW,
+    swiftness: BoonQuality.BELOW_AVERAGE,
+    vigor: BoonQuality.NONE,
   },
   misc: {
     stealth: 1,
@@ -421,12 +633,18 @@ const supportVindicator: Specialization = {
   core: 'revenant',
   role: 'support',
   boons: {
-    resistance: 5,
-    stability: 2,
-    protection: 5,
-    regen: 5,
-    might: 2,
-    vigor: 5,
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.SELF_ONLY,
+    might: BoonQuality.LOW,
+    protection: BoonQuality.NONE,
+    quickness: BoonQuality.NONE,
+    regen: BoonQuality.EXCELLENT,
+    resistance: BoonQuality.ABOVE_AVERAGE,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.SELF_ONLY,
+    swiftness: BoonQuality.NONE,
+    vigor: BoonQuality.LOW,
   },
   misc: {
     blastFinisher: 2,
@@ -436,8 +654,8 @@ const supportVindicator: Specialization = {
   }
 }
 export const supportGroup: { [k: string]: Specialization } = {
-  firebrand, scrapper, tempest, spellbreakerSupport, druid, mechanist,
-  supportVindicator
+  firebrand, scrapper, tempest, spellbreakerSupport, druid,
+  supportVindicator, supportAlacbender
 }
 export const meleeGroup: { [k: string]: Specialization } = {
   reaper,
