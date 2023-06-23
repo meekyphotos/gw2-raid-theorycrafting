@@ -9,6 +9,7 @@ import {Specialization} from "../class.definitions";
            })
 export class RaidCompComponent implements OnInit {
   @Input() group: Array<Array<Specialization | null>> = [];
+  @Input() advanced = false;
   @Output() groupChange: EventEmitter<Array<Array<Specialization | null>>> = new EventEmitter<Array<Array<Specialization | null>>>();
   @Output() changesToSquad: EventEmitter<Array<any>> = new EventEmitter<Array<any>>();
 

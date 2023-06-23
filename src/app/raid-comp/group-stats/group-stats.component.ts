@@ -8,6 +8,7 @@ import {defs, Specialization} from "../../class.definitions";
            })
 export class GroupStatsComponent implements OnInit, OnChanges {
   @Input() party: Array<Specialization | null> = [];
+  @Input() index  = 0;
   damageSpecs: string[] = [];
   damageCount = 0;
 

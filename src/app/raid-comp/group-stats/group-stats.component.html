@@ -1,12 +1,12 @@
-<div class="indicator" [class.indicator-off]="damageCount == 0" [ngxTippy]="damageSkillFact">
+<div class="indicator" [class.indicator-off]="damageCount == 0" [ngxTippy]="damageSkillFact" [tippyName]="'damage-'+ index">
     <img src="assets/controls/Power_attribute.png" alt="dps"/>
     <div class="counter" *ngIf="damageCount">{{damageCount}}</div>
 </div>
-<div class="indicator" [class.indicator-off]="ccCount == 0" [ngxTippy]="ccSkillFact">
+<div class="indicator" [class.indicator-off]="ccCount == 0" [ngxTippy]="ccSkillFact" [tippyName]="'cc-'+ index">
     <img src="assets/controls/daze.png" alt="support">
     <div class="counter" *ngIf="ccCount">{{ccCount}}</div>
 </div>
-<div class="indicator" [class.indicator-off]="supportCount == 0" [ngxTippy]="supportSkillFact">
+<div class="indicator" [class.indicator-off]="supportCount == 0" [ngxTippy]="supportSkillFact" [tippyName]="'support-'+ index">
     <img src="assets/controls/Vitality_attribute.png" alt="healers">
     <div class="counter" *ngIf="supportCount">{{supportCount}}</div>
 </div>

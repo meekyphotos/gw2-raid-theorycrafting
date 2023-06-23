@@ -8,11 +8,12 @@
             </li>
         </ng-container>
     </ul>
-    <div class="count" [class.full]="isFull()">
+    <div *ngIf="!advanced" class="count" [class.full]="isFull()">
         <h6>Count {{countParty()}} / 5</h6>
-        <app-group-stats [party]="party"></app-group-stats>
+        <app-group-stats [party]="party" [index]="groupId"></app-group-stats>
     </div>
-<!--    <app-boon-table [party]="party" class="hide-small"></app-boon-table>-->
-<!--    <app-control-misc-table [party]="party" class="hide-small"></app-control-misc-table>-->
+    <div *ngIf="advanced">
+        <app-boon-table [party]="party" class="hide-small" [index]="groupId"></app-boon-table>
+    </div>
 </div>
 

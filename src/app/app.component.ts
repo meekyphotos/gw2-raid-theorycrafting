@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
   group: Array<Array<Specialization | null>> = [];
   currentLink: string = '';
   @ViewChild('classPanel') classPanel: ClassPanelComponent | undefined = undefined;
+  advanced: boolean = false;
 
   onClassPanelReady() {
     const href = window.location.search.substring(1);

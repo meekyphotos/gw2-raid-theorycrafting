@@ -11,6 +11,7 @@ export class GroupComponent implements OnInit {
   @Input() title: string = '';
   @Input() groupId: number = 0;
   @Input() party: Array<Specialization | null> = [];
+  @Input() advanced = false
   @Output() partyChange: EventEmitter<Array<Specialization | null>> = new EventEmitter<Array<Specialization | null>>();
   @Output() receivedItem: EventEmitter<ReceivedItemEvent> = new EventEmitter<ReceivedItemEvent>();
 

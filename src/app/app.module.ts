@@ -12,7 +12,7 @@ import {ControlMiscTableComponent} from './raid-comp/control-misc-table/control-
 import {NgxTippyModule} from 'ngx-tippy-wrapper';
 import {SkillFactComponent} from './raid-comp/skill-fact/skill-fact.component';
 import {EditableModule} from '@ngneat/edit-in-place';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
             declarations: [
@@ -30,7 +30,8 @@ import {ReactiveFormsModule} from "@angular/forms";
               BrowserModule,
               NgxTippyModule,
               EditableModule,
-              ReactiveFormsModule
+              ReactiveFormsModule,
+              FormsModule
             ],
             providers: [],
             bootstrap: [AppComponent]

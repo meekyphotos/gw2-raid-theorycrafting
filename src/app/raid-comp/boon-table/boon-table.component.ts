@@ -8,6 +8,7 @@ import {Specialization} from "../../class.definitions";
            })
 export class BoonTableComponent implements OnInit, OnChanges {
   @Input() party: Array<Specialization | null> = [];
+  @Input() index = 0;
   aegis: string = 'no';
   alacrity: string = 'no';
   fury: string = 'no';
