@@ -524,7 +524,8 @@ const virtuoso: Specialization = {
   misc: {
     daze: 1,
     knockback: 2,
-    pull: 5
+    pull: 5,
+    strip: 1,
   }
 }
 
