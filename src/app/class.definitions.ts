@@ -676,6 +676,7 @@ const supportSpecter: Specialization = {
   },
   misc: {
     barrier: 5,
+    stealth: 1,
   }
 }
 export const supportGroup: { [k: string]: Specialization } = {
