@@ -655,7 +655,7 @@ const supportVindicator: Specialization = {
   }
 }
 const supportSpecter: Specialization = {
-  code: 25,
+  code: 27,
   img: 'specter',
   name: 'Specter',
   core: 'thief',
