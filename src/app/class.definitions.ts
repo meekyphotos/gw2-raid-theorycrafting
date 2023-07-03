@@ -653,9 +653,33 @@ const supportVindicator: Specialization = {
     breaks_stun: 2,
   }
 }
+const supportSpecter: Specialization = {
+  code: 25,
+  img: 'specter',
+  name: 'Specter',
+  core: 'thief',
+  role: 'support',
+  boons: {
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.LOW,
+    might: BoonQuality.NONE,
+    protection: BoonQuality.BELOW_AVERAGE,
+    quickness: BoonQuality.ABOVE_AVERAGE,
+    regen: BoonQuality.AVERAGE,
+    resistance: BoonQuality.EXCELLENT,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.BELOW_AVERAGE,
+    swiftness: BoonQuality.AVERAGE,
+    vigor: BoonQuality.NONE,
+  },
+  misc: {
+    barrier: 5,
+  }
+}
 export const supportGroup: { [k: string]: Specialization } = {
   firebrand, scrapper, tempest, spellbreakerSupport, druid,
-  supportVindicator, supportAlacbender
+  supportVindicator, supportAlacbender, supportSpecter
 }
 export const meleeGroup: { [k: string]: Specialization } = {
   reaper,
