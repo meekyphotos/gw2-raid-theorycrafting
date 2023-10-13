@@ -561,12 +561,37 @@ const scourge: Specialization = {
   role: 'damage',
   boons: {
     aegis: BoonQuality.SELF_ONLY,
-    alacrity: BoonQuality.SELF_ONLY,
+    alacrity: BoonQuality.BELOW_AVERAGE,
     fury: BoonQuality.SELF_ONLY,
     might: BoonQuality.SELF_ONLY,
     protection: BoonQuality.SELF_ONLY,
     quickness: BoonQuality.SELF_ONLY,
     regen: BoonQuality.SELF_ONLY,
+    resistance: BoonQuality.SELF_ONLY,
+    resolution: BoonQuality.SELF_ONLY,
+    stability: BoonQuality.SELF_ONLY,
+    swiftness: BoonQuality.SELF_ONLY,
+    vigor: BoonQuality.SELF_ONLY,
+  },
+  misc: {
+    barrier: 3,
+    strip: 1,
+  }
+}
+const supportScourge: Specialization = {
+  code: 31,
+  img: 'scourge',
+  name: 'Scourge',
+  core: 'necromancer',
+  role: 'support',
+  boons: {
+    aegis: BoonQuality.LOW,
+    alacrity: BoonQuality.AVERAGE,
+    fury: BoonQuality.SELF_ONLY,
+    might: BoonQuality.AVERAGE,
+    protection: BoonQuality.SELF_ONLY,
+    quickness: BoonQuality.SELF_ONLY,
+    regen: BoonQuality.ABOVE_AVERAGE,
     resistance: BoonQuality.SELF_ONLY,
     resolution: BoonQuality.SELF_ONLY,
     stability: BoonQuality.SELF_ONLY,
@@ -601,6 +626,31 @@ const soulbeast: Specialization = {
   },
   misc: {}
 }
+const holo: Specialization = {
+  code: 33,
+  img: 'holosmith',
+  name: 'Holosmith',
+  core: 'engineer',
+  role: 'damage',
+  boons: {
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.SELF_ONLY,
+    might: BoonQuality.NONE,
+    protection: BoonQuality.NONE,
+    quickness: BoonQuality.SELF_ONLY,
+    regen: BoonQuality.NONE,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.SELF_ONLY,
+    swiftness: BoonQuality.NONE,
+    vigor: BoonQuality.NONE,
+  },
+  misc: {
+    superspeed: 1,
+    blastFinisher: 1,
+  }
+}
 const druid: Specialization = {
   code: 24,
   img: 'druid',
@@ -609,13 +659,13 @@ const druid: Specialization = {
   role: 'support',
   boons: {
     aegis: BoonQuality.LOW,
-    alacrity: BoonQuality.NONE,
+    alacrity: BoonQuality.ABOVE_AVERAGE,
     fury: BoonQuality.BELOW_AVERAGE,
     might: BoonQuality.LOW,
     protection: BoonQuality.NONE,
     quickness: BoonQuality.SELF_ONLY,
     regen: BoonQuality.ABOVE_AVERAGE,
-    resistance: BoonQuality.NONE,
+    resistance: BoonQuality.LOW,
     resolution: BoonQuality.NONE,
     stability: BoonQuality.LOW,
     swiftness: BoonQuality.BELOW_AVERAGE,
@@ -655,14 +705,14 @@ const supportVindicator: Specialization = {
 }
 export const supportGroup: { [k: string]: Specialization } = {
   firebrand, scrapper, tempest, spellbreakerSupport, druid,
-  supportVindicator, supportAlacbender
+  supportVindicator, supportAlacbender, supportScourge
 }
 export const meleeGroup: { [k: string]: Specialization } = {
   reaper,
   berserker,
   scourge,
   spellbreaker,
-
+  holo,
   daredevil,
   willbender,
 }
