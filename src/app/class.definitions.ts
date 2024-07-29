@@ -729,6 +729,30 @@ const supportSpecter: Specialization = {
     stealth: 1,
   }
 }
+
+const mirageDps: Specialization = {
+  code: 34,
+  img: 'mirage',
+  name: 'Mirage',
+  core: 'mesmer',
+  role: 'damage',
+  boons: {
+    aegis: BoonQuality.NONE,
+    alacrity: BoonQuality.NONE,
+    fury: BoonQuality.NONE,
+    might: BoonQuality.NONE,
+    protection: BoonQuality.NONE,
+    quickness: BoonQuality.NONE,
+    regen: BoonQuality.NONE,
+    resistance: BoonQuality.NONE,
+    resolution: BoonQuality.NONE,
+    stability: BoonQuality.NONE,
+    swiftness: BoonQuality.NONE,
+    vigor: BoonQuality.NONE,
+  },
+  misc: {
+  }
+}
 export const supportGroup: { [k: string]: Specialization } = {
   firebrand, scrapper, tempest, spellbreakerSupport, druid,
   supportVindicator, supportAlacbender, supportSpecter, supportScourge
@@ -749,7 +773,7 @@ export const rangeGroup: { [k: string]: Specialization } = {
   weaver,
   herald,
   catalyst,
-
+  mirageDps,
   virtuoso,
 }
 export const utilityGroup: { [k: string]: Specialization } = {
